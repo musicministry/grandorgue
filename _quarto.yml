@@ -18,7 +18,6 @@ book:
     - content/add-content.qmd
     - content/customizing.qmd
     - content/rendering.qmd
-    - content/figures_and_tables.qmd
     - content/adding-refs.qmd
     - content/references.qmd
 
