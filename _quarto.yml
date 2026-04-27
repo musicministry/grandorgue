@@ -3,28 +3,15 @@ project:
 
 book: 
   page-navigation: true
-  title: "NOAA quarto book" 
-  site-url: "https://nmfs-opensci.github.io/NOAA-quarto-book" 
-  repo-url: "https://github.com/nmfs-opensci/NOAA-quarto-book"
+  title: "GrandOrgue Implementation" 
+  site-url: "https://musicministry.github.io/grandorgue/" 
+  repo-url: "https://github.com/musicministry/grandorgue"
   repo-actions: [edit, source, issue]
-  favicon: assets/favicon.ico
+  favicon: assets/pipes-favicon.ico
   downloads: [pdf, docx]
   search: true
   author:
-    - name: Jane Doe
-      affiliations:
-        - name: NOAA Fisheres
-          department: Northwest Fisheries Science Center
-    - name: Eva Nováková
-      institute: test
-      affiliations:
-        - name: NOAA Fisheries
-          department: West Coast Regional Office
-          institute: test
-    - name: Matti Meikäläinen
-      affiliations:
-        - name: NOAA Fisheries
-          department: Southwest Fisheries Science Center
+    - name: Matt Grossi
   chapters:
     - index.qmd
     - content/setup.qmd
@@ -32,7 +19,6 @@ book:
     - content/customizing.qmd
     - content/rendering.qmd
     - content/figures_and_tables.qmd
-    - content/code.qmd
     - content/adding-refs.qmd
     - content/references.qmd
 
@@ -42,14 +28,14 @@ book:
   
   sidebar:
     background: "#D9E3E4"
-    logo: "https://raw.githubusercontent.com/nmfs-opensci/assets/main/logo/nmfs-opensci-logo3.png"
-    favicon: images/favicon.ico
+    logo: "assets/pipes-favicon.png"
+    favicon: assets/pipes-favicon.ico
     pinned: true
     align: center
     tools: 
       - icon: globe
-        href: https://nmfs-opensci.github.io
-        text: "NMFS Open Science"
+        href: https://musicministry.github.io
+        text: "Music Ministry"
     style: "docked"
     search: true
     collapse-level: 1
