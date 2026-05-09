@@ -1,20 +1,100 @@
 ---
 title: "Set-up"
+subtitle: Setting up the hardware and software for GrandOrgue
 ---
 
-This is a template for a simple Quarto book output to html, PDF or docx format.  It includes a GitHub Action that will build the website automatically when you make changes to the files. The NOAA palette and fonts has been added to `theme.scss`. The webpage will be on the `gh-pages` branch. Serving the website files from this branch is a common way to keep all the website files from cluttering your main branch. 
+## Raspberry Pi setup
 
-The GitHub Action installs R so you can have R code in your qmd or Rmd files. Note, you do not need to make changes to your Rmd files unless your need Quarto features like cross-references.
+Raspberry Pi (RPi) devices run Debian-based Raspberry Pi OS. GrandOrgue needs the 64-bit Raspberry Pi OS in order to utilize all of the installed RAM (a 32-bit OS would cap the usable RAM at 4 GB, regardless of what is installed in the system.) This comes pre-installed on the CanaKit RPi.
 
-## GitHub Set-up
+If you don't have the 64-bit version:
 
-* Click the green "use template" button to make a repository with this content.  Make sure to make your repo public (since GitHub Pages doesn't work on private repos unless you have a paid account) and check box to include all the branches (so that you get the gh-pages branch).
-<img width="637" alt="image" src="https://user-images.githubusercontent.com/2545978/197051535-c43c62de-17e8-40bf-a536-3eea8db250c4.png">
+1. On another computer, open the RPi Imager and use the gear icon to pre-configure your Wi-Fi credentials, hostname, and enable SSH. This saves time on first boot.
+2. Use the Imager on this computer to flash Raspberry Pi OS (64-bit) to your RPi SD card. Be sure to choose to full desktop version.
 
-* Turn on GitHub Pages under Settings > Pages . You will set pages to be made from the gh-pages branch and root directory.
-<img width="540" alt="image" src="https://user-images.githubusercontent.com/2545978/196808262-3d2262be-b9b5-4897-bba5-fc2f056dd335.png">
+Back on the RPi, before installing anything, download and install any OS updates:
 
-* Turn on GitHub Actions under Settings > Actions > General
-<img width="719" alt="image" src="https://user-images.githubusercontent.com/2545978/196808404-0c075fcf-db03-4516-88dd-3143b9fca475.png">
+```bash
+sudo apt update && sudo apt full-upgrade -y
+sudo reboot
+```
 
-* Edit the repo description and Readme to add a link to the webpage. When you edit the description, you will see the link url in the url box or you can click on the Actions tab or the  Settings > Pages page to find the url.
+GrandOrgue [recommends X11](https://github.com/GrandOrgue/grandorgue/blob/master/INSTALL.md) to properly handle window sizing and positioning. To switch the display mode:
+
+1. Open a terminal and run `sudo raspi-config`
+2. Use the down arrow key to select **Advanced Options**
+3. In the next menu, select **Wayland**
+4. Select **X11**, then **\<OK\>**
+5. Use the right arrow key to select **\<Finish\>** and then **Reboot**
+
+The touch monitor is plug-and-play. Since the RPi 5 only has a single USB-C port, which is used for the power supply, the monitor needs to be connected to the RPi via both HDMI for data and USB for power. I used the HDMI to mini-HDMI cable that came with the RPi and the USB-C to USB-A cable that came with the monitor. The RPi did need to be rebooted after everything was plugged in for the touch screen to work properly.
+
+## GrandOrgue installation
+
+From the [GrandOrgue releases GitHub](https://github.com/GrandOrgue/grandorgue/releases), download the `arm64.deb` architecture package. As of May 2026, the current release was `grandorgue_3.17.1-1_arm64.deb`. You can also download it directly in the terminal:
+
+```{bash}
+wget https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue_3.17.1-1_arm64.deb
+```
+
+<!-- There are also two companion packages worth grabbing:
+
+```{bash}
+wget https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue-resources_3.17.1-1_all.deb
+wget https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue-demo_3.17.1-1_all.deb
+```
+
+The `-resources` package contains tutorials and documentation; `-demo` contains a small built-in sample set so you can verify everything works before loading a large organ. -->
+
+(Note: `grandorgue` requires **wxWidgets 3.2** and `grandorgue-wx30` requires **wxWidgets 3.0**. Raspberry Pi OS Bookworm ships with wxWidgets 3.2, so the standard `grandorgue` package above is the correct one.)
+
+Install the software using either the downloaded installer or terminal:
+
+```bash
+sudo apt install ./grandorgue_3.17.1-1_arm64.deb
+```
+
+You might get a `Permission Denied` warning, but it can be ignored:  
+
+```bash
+N: Download is performed unsandboxed as root as file '/home/username/grandorgue_3.17.1-1_arm64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
+```
+
+It is not a fatal error; the application should have installed fine. 
+
+Verify the installation by looking for it in the **Sound & Video** application menu. Launch the program. It should open with the demo organ available.
+
+### MIDI
+
+Next, configure the MIDI hardware:
+
+1. Plug in the Behringer UMC204HD USB audio interface to the RPi via USB and to the keyboard or organ using MIDI cables.
+2. Open GrandOrgue and go to File → Preferences → Audio. You should see the UMC204HD listed as an ALSA device. Select it, set the sample rate to 48000 Hz and start with 512 samples per buffer.
+3. You can tune the buffer size down later if latency feels sluggish, or up if you hear crackle.
+4. Go to File → Preferences → MIDI Devices. The UMC204HD's MIDI ports should appear as ALSA MIDI devices. 
+5. Enable the input port. Then load a sample set and use File → MIDI Recorder or just play a key. GrandOrgue will prompt you to map MIDI channels to manuals the first time.
+
+### GrandOrgue configuration
+
+Lastly, we need to map MIDI channels between GrandOrgue and the instrument.
+
+1. Go to File → Settings → MIDI Devices
+2. Under "MIDI output devices", make sure UNC204HD is selected. Click OK.
+3. On the virtual pipe organ (VPO) console, right-click a virtual manual to map to.
+4. In the box that opens, click "Listen for Event". Play a key on the keyboard you wish to map to that virtual organ manual.
+5. Click OK.
+
+To reduce audio lag:
+
+1. File → Settings → Audio
+2. Set the "Samples per buffer" to 256 or 128 (defaults to 512).
+
+The lower the buffer size, the lower the latency. At 48,000 Hz sample rate, 128 samples per buffer supposedly gives about 2.7 milliseconds of latency, which is completely imperceptible. The tradeoff is that very low buffer sizes can cause audio crackle or dropouts if the RPi can't process audio fast enough, but the Pi 5 should be plenty powerful enough to handle 128 samples without trouble, especially with the demo sample set.
+
+Even at 128, I still noticed a lag, but it was better than when I started. It is possible that some delay is "built in" as the result of the sample recording. This remains to be determined. I am accustomed to old-technology, non-realistic digital organs where the sound is instantaneous, where many pipe organs have a slight (fraction of a second) lag between the time a key is depressed and the sound is actually heard.
+
+### Audio
+
+By default, the VPO plays through the computer speakers. In this setup, this means the speakers on the touch screen monitor. Much better sound quality can be obtained with better speakers or headphones.
+
+Bluetooth headphones may experience a fairly significant lag in audio. It did for me. Since my old keyboard did not have an Audio In jack, I could not channel the sound back to the keyboard speakers -- which is just as well, because they are not very good either. The best (but not perfect) option was wired headphones plugged into the UNC204HD interface. The only headphones I owned had a 1/8" plug, so I had to use a 1/4"-1/8" adapter to connect them. There was a slight buzz, possibly resulting from the extra connection. It was annoying, but not bad enough to abandon the setup.
