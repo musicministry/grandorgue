@@ -19,10 +19,9 @@ book:
     - index.qmd
     - content/hardware.qmd
     - content/setup.qmd
-    - content/add-content.qmd
     - content/customizing.qmd
-    - content/rendering.qmd
-    - content/adding-refs.qmd
+    # - content/rendering.qmd
+    # - content/adding-refs.qmd
     - content/references.qmd
 
   page-footer:
