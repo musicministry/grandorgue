@@ -14,7 +14,7 @@ book:
   search: true
   author:
     - name: Matt Grossi
-  date: May 2026
+  date: today
   chapters:
     - index.qmd
     - content/hardware.qmd
