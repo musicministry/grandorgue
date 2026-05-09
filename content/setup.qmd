@@ -5,14 +5,9 @@ subtitle: Setting up the hardware and software for GrandOrgue
 
 ## Raspberry Pi setup
 
-Raspberry Pi (RPi) devices run Debian-based Raspberry Pi OS. GrandOrgue needs the 64-bit Raspberry Pi OS in order to utilize all of the installed RAM (a 32-bit OS would cap the usable RAM at 4 GB, regardless of what is installed in the system.) This comes pre-installed on the CanaKit RPi.
+Raspberry Pi (RPi) devices run Debian-based Raspberry Pi OS. GrandOrgue needs the 64-bit Raspberry Pi OS in order to utilize all of the installed RAM (a 32-bit OS would cap the usable RAM at 4 GB, regardless of what is installed in the system.) The 64-bit OS conveniently comes pre-installed on the CanaKit RPi.
 
-If you don't have the 64-bit version:
-
-1. On another computer, open the RPi Imager and use the gear icon to pre-configure your Wi-Fi credentials, hostname, and enable SSH. This saves time on first boot.
-2. Use the Imager on this computer to flash Raspberry Pi OS (64-bit) to your RPi SD card. Be sure to choose to full desktop version.
-
-Back on the RPi, before installing anything, download and install any OS updates:
+Before installing anything, download and install any OS updates:
 
 ```bash
 sudo apt update && sudo apt full-upgrade -y
@@ -27,24 +22,15 @@ GrandOrgue [recommends X11](https://github.com/GrandOrgue/grandorgue/blob/master
 4. Select **X11**, then **\<OK\>**
 5. Use the right arrow key to select **\<Finish\>** and then **Reboot**
 
-The touch monitor is plug-and-play. Since the RPi 5 only has a single USB-C port, which is used for the power supply, the monitor needs to be connected to the RPi via both HDMI for data and USB for power. I used the HDMI to mini-HDMI cable that came with the RPi and the USB-C to USB-A cable that came with the monitor. The RPi did need to be rebooted after everything was plugged in for the touch screen to work properly.
+The touch monitor was plug-and-play. Since the RPi 5 only has a single USB-C port, which is used for the power supply, the monitor needed to be connected to the RPi via both HDMI for data and USB for power. I used the HDMI to mini-HDMI cable that came with the RPi and the USB-C to USB-A cable that came with the monitor. The RPi did need to be rebooted after everything was connected for the touch screen to work properly.
 
 ## GrandOrgue installation
 
 From the [GrandOrgue releases GitHub](https://github.com/GrandOrgue/grandorgue/releases), download the `arm64.deb` architecture package. As of May 2026, the current release was `grandorgue_3.17.1-1_arm64.deb`. You can also download it directly in the terminal:
 
-```{bash}
+```bash
 wget https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue_3.17.1-1_arm64.deb
 ```
-
-<!-- There are also two companion packages worth grabbing:
-
-```{bash}
-wget https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue-resources_3.17.1-1_all.deb
-wget https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue-demo_3.17.1-1_all.deb
-```
-
-The `-resources` package contains tutorials and documentation; `-demo` contains a small built-in sample set so you can verify everything works before loading a large organ. -->
 
 (Note: `grandorgue` requires **wxWidgets 3.2** and `grandorgue-wx30` requires **wxWidgets 3.0**. Raspberry Pi OS Bookworm ships with wxWidgets 3.2, so the standard `grandorgue` package above is the correct one.)
 
@@ -62,39 +48,39 @@ N: Download is performed unsandboxed as root as file '/home/username/grandorgue_
 
 It is not a fatal error; the application should have installed fine. 
 
-Verify the installation by looking for it in the **Sound & Video** application menu. Launch the program. It should open with the demo organ available.
+Verify the installation by looking for it in the **Sound & Video** application menu. Launch the program. It should open and load the demo organ.
 
 ### MIDI
 
 Next, configure the MIDI hardware:
 
 1. Plug in the Behringer UMC204HD USB audio interface to the RPi via USB and to the keyboard or organ using MIDI cables.
-2. Open GrandOrgue and go to File → Preferences → Audio. You should see the UMC204HD listed as an ALSA device. Select it, set the sample rate to 48000 Hz and start with 512 samples per buffer.
+2. Open GrandOrgue and go to **File** → **Preferences** → **Audio**. You should see the UMC204HD listed as an ALSA device. Select it, set the sample rate to 48000 Hz and start with 512 samples per buffer.
 3. You can tune the buffer size down later if latency feels sluggish, or up if you hear crackle.
-4. Go to File → Preferences → MIDI Devices. The UMC204HD's MIDI ports should appear as ALSA MIDI devices. 
-5. Enable the input port. Then load a sample set and use File → MIDI Recorder or just play a key. GrandOrgue will prompt you to map MIDI channels to manuals the first time.
+4. Go to **File** → **Preferences** → **MIDI Devices**. The UMC204HD's MIDI ports should appear as ALSA MIDI devices. 
+5. Enable the input port. Then load a sample set.
 
 ### GrandOrgue configuration
 
-Lastly, we need to map MIDI channels between GrandOrgue and the instrument.
+Next, we need to map MIDI channels between GrandOrgue and the instrument.
 
-1. Go to File → Settings → MIDI Devices
-2. Under "MIDI output devices", make sure UNC204HD is selected. Click OK.
+1. Go to **File** → **Settings** → **MIDI Devices**
+2. Under **MIDI output devices**, make sure UNC204HD is selected. Click **OK**.
 3. On the virtual pipe organ (VPO) console, right-click a virtual manual to map to.
-4. In the box that opens, click "Listen for Event". Play a key on the keyboard you wish to map to that virtual organ manual.
-5. Click OK.
+4. In the box that opens, click **Listen for Event**. Play a key on the keyboard you wish to map to that virtual organ manual.
+5. Click **OK**.
 
 To reduce audio lag:
 
-1. File → Settings → Audio
-2. Set the "Samples per buffer" to 256 or 128 (defaults to 512).
+1. **File** → **Settings** → ((Audi))o
+2. Set the **Samples per buffer** to 256 or 128 (defaults to 512).
 
-The lower the buffer size, the lower the latency. At 48,000 Hz sample rate, 128 samples per buffer supposedly gives about 2.7 milliseconds of latency, which is completely imperceptible. The tradeoff is that very low buffer sizes can cause audio crackle or dropouts if the RPi can't process audio fast enough, but the Pi 5 should be plenty powerful enough to handle 128 samples without trouble, especially with the demo sample set.
+The lower the buffer size, the lower the latency. At 48,000 Hz sample rate, 128 samples per buffer supposedly gives about 2.7 milliseconds of latency, which is completely imperceptible. The tradeoff is that very low buffer sizes can cause audio crackle or dropouts if the RPi can't process audio fast enough. The Pi 5 should, however, be plenty powerful enough to handle 128 samples without trouble, especially with the demo sample set.
 
-Even at 128, I still noticed a lag, but it was better than when I started. It is possible that some delay is "built in" as the result of the sample recording. This remains to be determined. I am accustomed to old-technology, non-realistic digital organs where the sound is instantaneous, where many pipe organs have a slight (fraction of a second) lag between the time a key is depressed and the sound is actually heard.
+Even at 128 samples/buffer, I still noticed a lag, but it was better than when I started. It is possible that some delay is "built in" as the result of the sample recording. This remains to be determined. I am accustomed to old-technology, non-realistic digital organs on which the sound is instantaneous, whereas many pipe organs have a slight (fraction of a second) lag between the time a key is depressed and the sound is actually heard.
 
 ### Audio
 
-By default, the VPO plays through the computer speakers. In this setup, this means the speakers on the touch screen monitor. Much better sound quality can be obtained with better speakers or headphones.
+By default, the VPO plays through the computer speakers -- in this case, the speakers on the touch screen monitor. Much better sound quality can be obtained with better speakers or headphones.
 
-Bluetooth headphones may experience a fairly significant lag in audio. It did for me. Since my old keyboard did not have an Audio In jack, I could not channel the sound back to the keyboard speakers -- which is just as well, because they are not very good either. The best (but not perfect) option was wired headphones plugged into the UNC204HD interface. The only headphones I owned had a 1/8" plug, so I had to use a 1/4"-1/8" adapter to connect them. There was a slight buzz, possibly resulting from the extra connection. It was annoying, but not bad enough to abandon the setup.
+Bluetooth headphones may experience a fairly significant lag in audio. It did for me. Since my old keyboard did not have an Audio In jack, I could not channel the sound back to the keyboard speakers -- which was just as well, because they are not very good either. The best (but not perfect) option was wired headphones plugged into the UNC204HD interface. The only headphones I owned had a 1/8" plug, so I had to use a 1/4"-1/8" adapter to connect them. There was a slight buzz, possibly resulting from the extra connection. It was annoying, but not bad enough to abandon the setup.

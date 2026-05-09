@@ -1,10 +1,8 @@
 # Executive Summary {.unnumbered}
 
-This site documents my experience setting up, configuring, and using a [GrandOrgue](https://github.com/GrandOrgue/grandorgue) virtual pipe organ (VPO). As of 2026, there was little compiled documentation other than how to download. Information such as system and hardware requirements was scattered throughout the internet, but one generally had to find it through a search engine. The official software documentation consisted of various help pages, but no step-by-step instructions. Lots of community user experiences were captured in hundreds of [issues](https://github.com/GrandOrgue/grandorgue/issues) and thousands of [discussions](https://github.com/GrandOrgue/grandorgue/discussions) on the official GitHub repo. Most of the information here came from those sources.
+This site documents my experience setting up, configuring, and using a [GrandOrgue](https://github.com/GrandOrgue/grandorgue) virtual pipe organ (VPO). As of 2026, there was little compiled documentation other than how to download the software. Information such as system and hardware requirements was scattered throughout the internet, but one generally had to find it through a search engine. Some of this information was later discovered within the GrandOrgue Help pages, but that was after downloading, installing, and digging into the software. I wanted to know what I needed *before* starting the project to determine whether it was feasible. For example, could I use a Raspberry Pi or would I need something more powerful? Lots of community user experiences were captured in hundreds of [issues](https://github.com/GrandOrgue/grandorgue/issues) and thousands of [discussions](https://github.com/GrandOrgue/grandorgue/discussions) on the official GitHub repo. It all felt very scattered. This site attempts to organize my research, trials, and errors.
 
-Getting a functioning VPO took considerable trial and error. The dead ends and failures are not contained here, but important "gotchas" are noted when helpful.
-
-These pages are my contribution to the open source GrandOrgue project and its outstanding user community. I hope these pages help you build your own GrandOrgue VPO.
+These pages are my contribution to the open source GrandOrgue project and its outstanding user community. I hope these pages help you build and enjoy your own GrandOrgue virtual pipe organ.
 
 ```{=openxml}
 <w:p><w:r><w:br w:type="page"/></w:r></w:p>
