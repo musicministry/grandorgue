@@ -1,9 +1,11 @@
 project: 
   type: book
+  execute-dir: file
 
 book: 
   page-navigation: true
-  title: "GrandOrgue Implementation" 
+  title: "My GrandOrgue Implementation" 
+  subtitle: "Making sense of scattered documentation and user experiences"
   site-url: "https://musicministry.github.io/grandorgue/" 
   repo-url: "https://github.com/musicministry/grandorgue"
   repo-actions: [edit, source, issue]
@@ -12,8 +14,10 @@ book:
   search: true
   author:
     - name: Matt Grossi
+  date: May 2026
   chapters:
     - index.qmd
+    - content/hardware.qmd
     - content/setup.qmd
     - content/add-content.qmd
     - content/customizing.qmd
@@ -27,14 +31,14 @@ book:
   
   sidebar:
     background: "#D9E3E4"
-    logo: "assets/pipes-favicon.png"
+    logo: "assets/OrganPipes.jpg"
     favicon: assets/pipes-favicon.ico
     pinned: true
     align: center
     tools: 
       - icon: globe
-        href: https://musicministry.github.io
-        text: "Music Ministry"
+        href: https://musicministry.github.io/grandorgue/
+        text: "My GrandOrgue Implementation"
     style: "docked"
     search: true
     collapse-level: 1
