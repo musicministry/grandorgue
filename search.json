@@ -2,121 +2,171 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "GrandOrgue Implementation",
+    "title": "My GrandOrgue Implementation",
     "section": "",
-    "text": "Executive Summary\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo gravida justo consectetur condimentum. Proin eget felis non nunc tristique malesuada vel ut tortor. Vivamus lacinia aliquet lorem in congue. In hac habitasse platea dictumst. Etiam non felis iaculis, efficitur libero in, porta nunc. Sed sit amet nisi non justo scelerisque feugiat. Pellentesque porta consectetur sapien, porttitor iaculis ligula fermentum ac. Pellentesque fermentum elementum lacus non tempus. Aenean eu leo lobortis, vulputate mi at, varius sapien. In congue consectetur ultricies. Maecenas volutpat facilisis arcu, eget sodales tellus consequat nec. Integer ullamcorper ex nec leo aliquam tempus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc dui massa, facilisis at aliquet eu, malesuada vel neque. Donec fermentum elit eu tortor euismod, sed mollis lacus blandit.\nNew paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer commodo gravida justo consectetur condimentum. Proin eget felis non nunc tristique malesuada vel ut tortor. Vivamus lacinia aliquet lorem in congue. In hac habitasse platea dictumst. Etiam non felis iaculis, efficitur libero in, porta nunc. Sed sit amet nisi non justo scelerisque feugiat. Pellentesque porta consectetur sapien, porttitor iaculis ligula fermentum ac. Pellentesque fermentum elementum lacus non tempus. Aenean eu leo lobortis, vulputate mi at, varius sapien. In congue consectetur ultricies. Maecenas volutpat facilisis arcu, eget sodales tellus consequat nec. Integer ullamcorper ex nec leo aliquam tempus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc dui massa, facilisis at aliquet eu, malesuada vel neque. Donec fermentum elit eu tortor euismod, sed mollis lacus blandit.",
+    "text": "Executive Summary\nThis site documents my experience setting up, configuring, and using a GrandOrgue virtual pipe organ (VPO). As of 2026, there was little compiled documentation other than how to download. Information such as system and hardware requirements was scattered throughout the internet, but one generally had to find it through a search engine. The official software documentation consisted of various help pages, but no step-by-step instructions. Lots of community user experiences were captured in hundreds of issues and thousands of discussions on the official GitHub repo. Most of the information here came from those sources.\nGetting a functioning VPO took considerable trial and error. The dead ends and failures are not contained here, but important “gotchas” are noted when helpful.\nThese pages are my contribution to the open source GrandOrgue project and its outstanding user community. I hope these pages help you build your own GrandOrgue VPO.",
     "crumbs": [
       "Executive Summary"
     ]
   },
   {
-    "objectID": "content/setup.html",
-    "href": "content/setup.html",
-    "title": "1  Set-up",
+    "objectID": "content/hardware.html",
+    "href": "content/hardware.html",
+    "title": "1  Hardware",
     "section": "",
-    "text": "1.1 GitHub Set-up\nThis is a template for a simple Quarto book output to html, PDF or docx format. It includes a GitHub Action that will build the website automatically when you make changes to the files. The NOAA palette and fonts has been added to theme.scss. The webpage will be on the gh-pages branch. Serving the website files from this branch is a common way to keep all the website files from cluttering your main branch.\nThe GitHub Action installs R so you can have R code in your qmd or Rmd files. Note, you do not need to make changes to your Rmd files unless your need Quarto features like cross-references.",
+    "text": "1.1 BLUF\nThe minimum requirements needed to get started with GrandOrgue are:\nAnd, if you don’t want the sound to play from your computer speakers:",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Set-up</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Hardware</span>"
     ]
   },
   {
-    "objectID": "content/setup.html#github-set-up",
-    "href": "content/setup.html#github-set-up",
-    "title": "1  Set-up",
+    "objectID": "content/hardware.html#bluf",
+    "href": "content/hardware.html#bluf",
+    "title": "1  Hardware",
     "section": "",
-    "text": "Click the green “use template” button to make a repository with this content. Make sure to make your repo public (since GitHub Pages doesn’t work on private repos unless you have a paid account) and check box to include all the branches (so that you get the gh-pages branch). \nTurn on GitHub Pages under Settings &gt; Pages . You will set pages to be made from the gh-pages branch and root directory. \nTurn on GitHub Actions under Settings &gt; Actions &gt; General \nEdit the repo description and Readme to add a link to the webpage. When you edit the description, you will see the link url in the url box or you can click on the Actions tab or the Settings &gt; Pages page to find the url.",
+    "text": "Computer with at least 8 GB RAM (16+ GB preferred)\nTouch screen monitor (for interacting with virtual console controls)\nMIDI-USB cable or MIDI cable with a USB audio interface device for connecting the computer to the MIDI instrument\nMIDI-ready organ or keyboard\n\n\n\nAudio cable to port audio from computer to an organ amplifier\nor\n\nQuality external speakers to connect directly to the computer",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Set-up</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Hardware</span>"
+    ]
+  },
+  {
+    "objectID": "content/hardware.html#discussion",
+    "href": "content/hardware.html#discussion",
+    "title": "1  Hardware",
+    "section": "1.2 Discussion",
+    "text": "1.2 Discussion\nGrandOrgue is free open source computer software supported for Windows, MacOS, and at least some Linux distributions. System and hardware requirements are summarized here, with the most important requirement being RAM.\nMy initial installation was intended to proof-of-concept learning experiment to assess whether or not it was something I wanted to delve further into and scale up. I already had an old (circa 1997) Casio MIDI keyboard1, so I decided to use that as the workbench test case for experimentation. Then, once I knew what I was doing and felt comfortable with the technical components, I wanted to transfer the setup to a MIDI-ready digital church organ to try it out “in the field” with an actual organ console, decent speakers, and a room where an organ is regularly used.\nWith this in mind, I sought portability with minimal spatial footprint. Desktop computers took up too much space and are not easily portable, so they were out. Without having a personal organ at home, I needed to interface with the software directly through the computer rather than via an organ console, so I wanted to have a touch screen monitor that could be positioned in close proximity to the music keyboard. While standard laptops with touch screens are portable and could work, I would have to always reach over the laptop keyboard to reach the screen, which was not ideal. My solution was to use a Raspberry Pi together with a simple touch screen monitor.\nI opted for the Raspberry Pi 5 because it was the first and, as of 2026, only unit to support 16 GB of RAM. I purchased a full starter kit for $385 which included:\n\nRaspberry Pi 5 with 2.4Ghz 64-bit quad-core CPU and 64 GB of RAM\n128GB Micro SD Card pre-loaded with 64-bit Raspberry Pi OS, USB MicroSD Card Reader\nPlastic protective case\nLow noise bearing system fan\nHeat sink\n45W PD Power Supply\n2 6-foot display cables\n\nI bought a simple and compact 15.6” portable touch screen monitor for $95 as my primary means of interacting with GrandOrgue. An upgrade might be in store down the road, but this will due to start.\nUnfortunately, the Raspberry Pi 5 does not have a dedicated 3.5mm headphone audio jack like its predecessor. Audio is outputted through HDMI or USB instead. I ended up buying a Behringer UMC204HD USB audio interface for $116 which would allow me to use a single USB port for both audio and to connect standard MIDI cables instead of a MIDI-USB cable. I also bought a 9.8-foot dual 5-pin MIDI cable for $11 to go along with that because I did not have one already.\nAltogether, my expenses for the initial set up came out to be just over $600:\n\nTotal cost of my initial proof-of-concept setup.\n\n\nExpense\nCost (USD)\n\n\n\n\nRaspberry Pi 5 kit\n$385\n\n\nBehringer UMC204HD\n$116\n\n\nTouch screen monitor\n$95\n\n\nMIDI cable\n$11\n\n\nKeyboard\n$0\n\n\nTOTAL\n$607\n\n\n\nNot bad for an authentic-sounding practice organ! The pages that follow describe how I set up, configured, and tested everything.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Hardware</span>"
+    ]
+  },
+  {
+    "objectID": "content/hardware.html#footnotes",
+    "href": "content/hardware.html#footnotes",
+    "title": "1  Hardware",
+    "section": "",
+    "text": "Old keyboards can almost always be found on Facebook Marketplace or similar sites for free or very little money. Just make sure it supports MIDI, which most manufactured after the 1980s will.↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Hardware</span>"
+    ]
+  },
+  {
+    "objectID": "content/setup.html",
+    "href": "content/setup.html",
+    "title": "2  Set-up",
+    "section": "",
+    "text": "2.1 Raspberry Pi setup\nRaspberry Pi (RPi) devices run Debian-based Raspberry Pi OS. GrandOrgue needs the 64-bit Raspberry Pi OS in order to utilize all of the installed RAM (a 32-bit OS would cap the usable RAM at 4 GB, regardless of what is installed in the system.) This comes pre-installed on the CanaKit RPi.\nIf you don’t have the 64-bit version:\nBack on the RPi, before installing anything, download and install any OS updates:\nGrandOrgue recommends X11 to properly handle window sizing and positioning. To switch the display mode:\nThe touch monitor is plug-and-play. Since the RPi 5 only has a single USB-C port, which is used for the power supply, the monitor needs to be connected to the RPi via both HDMI for data and USB for power. I used the HDMI to mini-HDMI cable that came with the RPi and the USB-C to USB-A cable that came with the monitor. The RPi did need to be rebooted after everything was plugged in for the touch screen to work properly.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Set-up</span>"
+    ]
+  },
+  {
+    "objectID": "content/setup.html#raspberry-pi-setup",
+    "href": "content/setup.html#raspberry-pi-setup",
+    "title": "2  Set-up",
+    "section": "",
+    "text": "On another computer, open the RPi Imager and use the gear icon to pre-configure your Wi-Fi credentials, hostname, and enable SSH. This saves time on first boot.\nUse the Imager on this computer to flash Raspberry Pi OS (64-bit) to your RPi SD card. Be sure to choose to full desktop version.\n\n\nsudo apt update && sudo apt full-upgrade -y\nsudo reboot\n\n\nOpen a terminal and run sudo raspi-config\nUse the down arrow key to select Advanced Options\nIn the next menu, select Wayland\nSelect X11, then &lt;OK&gt;\nUse the right arrow key to select &lt;Finish&gt; and then Reboot",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Set-up</span>"
+    ]
+  },
+  {
+    "objectID": "content/setup.html#grandorgue-installation",
+    "href": "content/setup.html#grandorgue-installation",
+    "title": "2  Set-up",
+    "section": "2.2 GrandOrgue installation",
+    "text": "2.2 GrandOrgue installation\nFrom the GrandOrgue releases GitHub, download the arm64.deb architecture package. As of May 2026, the current release was grandorgue_3.17.1-1_arm64.deb. You can also download it directly in the terminal:\nwget https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue_3.17.1-1_arm64.deb\n\n(Note: grandorgue requires wxWidgets 3.2 and grandorgue-wx30 requires wxWidgets 3.0. Raspberry Pi OS Bookworm ships with wxWidgets 3.2, so the standard grandorgue package above is the correct one.)\nInstall the software using either the downloaded installer or terminal:\nsudo apt install ./grandorgue_3.17.1-1_arm64.deb\nYou might get a Permission Denied warning, but it can be ignored:\nN: Download is performed unsandboxed as root as file '/home/username/grandorgue_3.17.1-1_arm64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\nIt is not a fatal error; the application should have installed fine.\nVerify the installation by looking for it in the Sound & Video application menu. Launch the program. It should open with the demo organ available.\n\n2.2.1 MIDI\nNext, configure the MIDI hardware:\n\nPlug in the Behringer UMC204HD USB audio interface to the RPi via USB and to the keyboard or organ using MIDI cables.\nOpen GrandOrgue and go to File → Preferences → Audio. You should see the UMC204HD listed as an ALSA device. Select it, set the sample rate to 48000 Hz and start with 512 samples per buffer.\nYou can tune the buffer size down later if latency feels sluggish, or up if you hear crackle.\nGo to File → Preferences → MIDI Devices. The UMC204HD’s MIDI ports should appear as ALSA MIDI devices.\nEnable the input port. Then load a sample set and use File → MIDI Recorder or just play a key. GrandOrgue will prompt you to map MIDI channels to manuals the first time.\n\n\n\n2.2.2 GrandOrgue configuration\nLastly, we need to map MIDI channels between GrandOrgue and the instrument.\n\nGo to File → Settings → MIDI Devices\nUnder “MIDI output devices”, make sure UNC204HD is selected. Click OK.\nOn the virtual pipe organ (VPO) console, right-click a virtual manual to map to.\nIn the box that opens, click “Listen for Event”. Play a key on the keyboard you wish to map to that virtual organ manual.\nClick OK.\n\nTo reduce audio lag:\n\nFile → Settings → Audio\nSet the “Samples per buffer” to 256 or 128 (defaults to 512).\n\nThe lower the buffer size, the lower the latency. At 48,000 Hz sample rate, 128 samples per buffer supposedly gives about 2.7 milliseconds of latency, which is completely imperceptible. The tradeoff is that very low buffer sizes can cause audio crackle or dropouts if the RPi can’t process audio fast enough, but the Pi 5 should be plenty powerful enough to handle 128 samples without trouble, especially with the demo sample set.\nEven at 128, I still noticed a lag, but it was better than when I started. It is possible that some delay is “built in” as the result of the sample recording. This remains to be determined. I am accustomed to old-technology, non-realistic digital organs where the sound is instantaneous, where many pipe organs have a slight (fraction of a second) lag between the time a key is depressed and the sound is actually heard.\n\n\n2.2.3 Audio\nBy default, the VPO plays through the computer speakers. In this setup, this means the speakers on the touch screen monitor. Much better sound quality can be obtained with better speakers or headphones.\nBluetooth headphones may experience a fairly significant lag in audio. It did for me. Since my old keyboard did not have an Audio In jack, I could not channel the sound back to the keyboard speakers – which is just as well, because they are not very good either. The best (but not perfect) option was wired headphones plugged into the UNC204HD interface. The only headphones I owned had a 1/8” plug, so I had to use a 1/4”-1/8” adapter to connect them. There was a slight buzz, possibly resulting from the extra connection. It was annoying, but not bad enough to abandon the setup.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Set-up</span>"
     ]
   },
   {
     "objectID": "content/add-content.html",
     "href": "content/add-content.html",
-    "title": "2  Customize",
+    "title": "3  Customize",
     "section": "",
-    "text": "2.1 Edit and add your pages\nEdit the qmd or md files in the content folder. qmd files can include code (R, Python, Julia) and lots of Quarto markdown bells and whistles (like call-outs, cross-references, auto-citations and much more).\nEach page should start with\nand the first header will be the 2nd level, so ##. Note, there are situations where you leave off\nand start the qmd file with a level header #, but if using the default title yaml (in the --- fence) is a good habit since it makes it easy for Quarto convert your qmd file to other formats (like into a presentation).",
+    "text": "3.1 Edit and add your pages\nEdit the qmd or md files in the content folder. qmd files can include code (R, Python, Julia) and lots of Quarto markdown bells and whistles (like call-outs, cross-references, auto-citations and much more).\nEach page should start with\nand the first header will be the 2nd level, so ##. Note, there are situations where you leave off\nand start the qmd file with a level header #, but if using the default title yaml (in the --- fence) is a good habit since it makes it easy for Quarto convert your qmd file to other formats (like into a presentation).",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Customize</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Customize</span>"
     ]
   },
   {
     "objectID": "content/add-content.html#edit-and-add-your-pages",
     "href": "content/add-content.html#edit-and-add-your-pages",
-    "title": "2  Customize",
+    "title": "3  Customize",
     "section": "",
     "text": "---\ntitle: your title\n---\n\n---\ntitle: your title\n---",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Customize</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Customize</span>"
     ]
   },
   {
     "objectID": "content/add-content.html#add-your-pages-the-project",
     "href": "content/add-content.html#add-your-pages-the-project",
-    "title": "2  Customize",
-    "section": "2.2 Add your pages the project",
-    "text": "2.2 Add your pages the project\n\nAdd the files to _quarto.yml",
+    "title": "3  Customize",
+    "section": "3.2 Add your pages the project",
+    "text": "3.2 Add your pages the project\n\nAdd the files to _quarto.yml",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Customize</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Customize</span>"
     ]
   },
   {
     "objectID": "content/customizing.html",
     "href": "content/customizing.html",
-    "title": "3  Customization",
+    "title": "4  Customization",
     "section": "",
-    "text": "3.1 Quarto documentation\nQuarto allow many bells and whistles to make nice output. Read the documentation here Quarto documentation.",
+    "text": "4.1 Bureå Funeral Chapel\nThe default sample set is great to get started with, but it’s rather small. The beauty of virtual pipe organ (VPO) software is the ability and flexibility to use any number of sample sets. Many sample sets of various sizes exist, from small single-division organs to large many-division instruments. One constraint is disk storage: one needs to have enough space to download and store the sample set. The primary constraint with choosing samples to use, however, is one’s memory: the sample set must fit in the computer’s RAM to work properly. Thus, my constraint was 16 GB RAM that came on the Raspberry Pi 5. What this means in practice:\nSince I only had one keyboard with no pedalboard, it made sense to consider single-manual samples. I could use larger ones, but I could only play one manual. The workaround would be mapping the Great division to my keyboard and relying on couplers to play other manuals from the Great manual.\nThe first organ I tried was the Bureå Funeral Chapel from Lars Virtual Pipe Organs. This is a small chamber organ with one manual, pedals, and 9 stops. All of the manual stops are split stops with separate drawknobs for bass (first two octaves) and division. This provides greater flexibility on a small instrument, allowing the organist to use different combinations of stops on one manual instead of across two manuals.\nFirst, I downloaded the .rar file. I needed to install the “unrar” utility the first time in order to extract this:\nThen I unpacked it into the GrandOrgue/Organs/ directory:\nOpen GrandOrgue, then got to File → Open, find and select the desired organ sample, and click “Open”. If everything worked, the new organ should load and be ready for use.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Customization</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Customization</span>"
     ]
   },
   {
-    "objectID": "content/customizing.html#examples",
-    "href": "content/customizing.html#examples",
-    "title": "3  Customization",
-    "section": "3.2 Examples",
-    "text": "3.2 Examples\nLooking at other people’s Quarto code is a great way to figure out how to do stuff. Most will have a link to a GitHub repo where you can see the raw code. Look for a link to edit page or see source code. This will usually be on the right. Or look for the GitHub icon somewhere.\n\nQuarto gallery\nnmfs-openscapes\nFaye lab manual\nquarto-titlepages Note the link to edit is broken. Go to repo and look in documentation directory.",
+    "objectID": "content/customizing.html#bureå-funeral-chapel",
+    "href": "content/customizing.html#bureå-funeral-chapel",
+    "title": "4  Customization",
+    "section": "",
+    "text": "sudo apt install unrar\n\nunrar x Burea_Funeral_Chapel.rar /home/username/GrandOrgue/Organs/Burea_Funeral_Chapel/",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Customization</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Customization</span>"
     ]
   },
   {
     "objectID": "content/rendering.html",
     "href": "content/rendering.html",
-    "title": "4  Rendering",
+    "title": "5  Rendering",
     "section": "",
-    "text": "4.1 Step 1. Make sure you have a recent RStudio\nThe repo includes a GitHub Action that will render (build) the website automatically when you make changes to the files. It will be pushed to the gh-pages branch.\nBut when you are developing your content, you will want to render it locally.\nHave you updated RStudio since about August 2022? No? Then update to a newer version of RStudio. In general, you want to keep RStudio updated and it is required to have a recent version to use Quarto.",
+    "text": "5.1 Step 1. Make sure you have a recent RStudio\nThe repo includes a GitHub Action that will render (build) the website automatically when you make changes to the files. It will be pushed to the gh-pages branch.\nBut when you are developing your content, you will want to render it locally.\nHave you updated RStudio since about August 2022? No? Then update to a newer version of RStudio. In general, you want to keep RStudio updated and it is required to have a recent version to use Quarto.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Rendering</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Rendering</span>"
     ]
   },
   {
     "objectID": "content/rendering.html#step-2.-clone-and-create-rstudio-project",
     "href": "content/rendering.html#step-2.-clone-and-create-rstudio-project",
-    "title": "4  Rendering",
-    "section": "4.2 Step 2. Clone and create RStudio project",
-    "text": "4.2 Step 2. Clone and create RStudio project\nFirst, clone the repo onto your local computer. How? You can click File &gt; New Project and then select “Version Control”. Paste in the url of the repository. That will clone the repo on to your local computer. When you make changes, you will need to push those up.",
+    "title": "5  Rendering",
+    "section": "5.2 Step 2. Clone and create RStudio project",
+    "text": "5.2 Step 2. Clone and create RStudio project\nFirst, clone the repo onto your local computer. How? You can click File &gt; New Project and then select “Version Control”. Paste in the url of the repository. That will clone the repo on to your local computer. When you make changes, you will need to push those up.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Rendering</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Rendering</span>"
     ]
   },
   {
     "objectID": "content/rendering.html#step-3.-render-within-rstudio",
     "href": "content/rendering.html#step-3.-render-within-rstudio",
-    "title": "4  Rendering",
-    "section": "4.3 Step 3. Render within RStudio",
-    "text": "4.3 Step 3. Render within RStudio\nRStudio will recognize that this is a Quarto project by the presence of the _quarto.yml file and will see the “Build” tab. Click the “Render website” button to render to the _site folder.\nPreviewing: You can either click index.html in the _site folder and specify “preview in browser” or set up RStudio to preview to the viewer panel. To do the latter, go to Tools &gt; Global Options &gt; R Markdown. Then select “Show output preview in: Viewer panel”.",
+    "title": "5  Rendering",
+    "section": "5.3 Step 3. Render within RStudio",
+    "text": "5.3 Step 3. Render within RStudio\nRStudio will recognize that this is a Quarto project by the presence of the _quarto.yml file and will see the “Build” tab. Click the “Render website” button to render to the _site folder.\nPreviewing: You can either click index.html in the _site folder and specify “preview in browser” or set up RStudio to preview to the viewer panel. To do the latter, go to Tools &gt; Global Options &gt; R Markdown. Then select “Show output preview in: Viewer panel”.",
     "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Rendering</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Rendering</span>"
     ]
   },
   {
     "objectID": "content/adding-refs.html",
     "href": "content/adding-refs.html",
-    "title": "5  References",
+    "title": "6  References",
     "section": "",
     "text": "Quarto has powerful references functionality. You can easily insert citations from Zotero libraries that you maintain in the cloud (on Zotero). This allows the whole team to update the library and you can sync up to that library. Read about this on the Quarto documentation on citations. Google youtube videos on this also to see it in action.\nAdd a .bib file in to your project or add a linked Zotero library via RStudio in Visual mode with Tools &gt; Project Options… &gt; R Markdown &gt; select custom libraries from the Zotero dropdown.\nThe you can type @ and you will see a dropdown of the references in your libraries. You can then select the ones to add. If you don’t see the one you need, you can paste in the DOI and it will be added to your references file (with all the info). The references will be added to your references section of your book automatically.\nSee the references.qmd file for how to include the references.\n\n@ansley1981 will produce Ansley and Davis (1981)\n[@ansley1981] will produce (Ansley and Davis 1981).\n\n\n\n\n\nAnsley, H. L. H., and C. D. Davis. 1981. Migration and Standing Stock of Fishes Associated with Artificial and Natural Reefs on Georgia’s Outer Continental Shelf. Brunswick, Georgia, USA.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>References</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>References</span>"
     ]
   },
   {

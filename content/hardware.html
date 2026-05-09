@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Rendering – My GrandOrgue Implementation</title>
+<title>1&nbsp; Hardware – My GrandOrgue Implementation</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -32,8 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/adding-refs.html" rel="next">
-<link href="../content/customizing.html" rel="prev">
+<link href="../content/setup.html" rel="next">
+<link href="../index.html" rel="prev">
 <link href="../assets/pipes-favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/rendering.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Rendering</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/hardware.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hardware</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -143,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/hardware.html" class="sidebar-item-text sidebar-link">
+  <a href="../content/hardware.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hardware</span></span></a>
   </div>
 </li>
@@ -167,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/rendering.html" class="sidebar-item-text sidebar-link active">
+  <a href="../content/rendering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Rendering</span></span></a>
   </div>
 </li>
@@ -193,18 +193,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#step-1.-make-sure-you-have-a-recent-rstudio" id="toc-step-1.-make-sure-you-have-a-recent-rstudio" class="nav-link active" data-scroll-target="#step-1.-make-sure-you-have-a-recent-rstudio"><span class="header-section-number">5.1</span> Step 1. Make sure you have a recent RStudio</a></li>
-  <li><a href="#step-2.-clone-and-create-rstudio-project" id="toc-step-2.-clone-and-create-rstudio-project" class="nav-link" data-scroll-target="#step-2.-clone-and-create-rstudio-project"><span class="header-section-number">5.2</span> Step 2. Clone and create RStudio project</a></li>
-  <li><a href="#step-3.-render-within-rstudio" id="toc-step-3.-render-within-rstudio" class="nav-link" data-scroll-target="#step-3.-render-within-rstudio"><span class="header-section-number">5.3</span> Step 3. Render within RStudio</a></li>
+  <li><a href="#bluf" id="toc-bluf" class="nav-link active" data-scroll-target="#bluf"><span class="header-section-number">1.1</span> BLUF</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">1.2</span> Discussion</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/musicministry/grandorgue/edit/main/content/rendering.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/musicministry/grandorgue/blob/main/content/rendering.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/musicministry/grandorgue/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/musicministry/grandorgue/edit/main/content/hardware.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/musicministry/grandorgue/blob/main/content/hardware.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/musicministry/grandorgue/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Rendering</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hardware</span></h1>
+<p class="subtitle lead">Requirements and considerations</p>
 </div>
 
 
@@ -221,22 +221,85 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The repo includes a GitHub Action that will render (build) the website automatically when you make changes to the files. It will be pushed to the <code>gh-pages</code> branch.</p>
-<p>But when you are developing your content, you will want to render it locally.</p>
-<section id="step-1.-make-sure-you-have-a-recent-rstudio" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="step-1.-make-sure-you-have-a-recent-rstudio"><span class="header-section-number">5.1</span> Step 1. Make sure you have a recent RStudio</h2>
-<p>Have you updated RStudio since about August 2022? No? Then update to a newer version of RStudio. In general, you want to keep RStudio updated and it is required to have a recent version to use Quarto.</p>
+<section id="bluf" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="bluf"><span class="header-section-number">1.1</span> BLUF</h2>
+<p>The minimum requirements needed to get started with GrandOrgue are:</p>
+<ul>
+<li>Computer with at least 8 GB RAM (16+ GB preferred)</li>
+<li>Touch screen monitor (for interacting with virtual console controls)</li>
+<li>MIDI-USB cable or MIDI cable with a USB audio interface device for connecting the computer to the MIDI instrument</li>
+<li>MIDI-ready organ or keyboard</li>
+</ul>
+<p>And, if you don’t want the sound to play from your computer speakers:</p>
+<ul>
+<li>Audio cable to port audio from computer to an organ amplifier<br>
+<em>or</em><br>
+</li>
+<li>Quality external speakers to connect directly to the computer</li>
+</ul>
 </section>
-<section id="step-2.-clone-and-create-rstudio-project" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="step-2.-clone-and-create-rstudio-project"><span class="header-section-number">5.2</span> Step 2. Clone and create RStudio project</h2>
-<p>First, clone the repo onto your local computer. How? You can click File &gt; New Project and then select “Version Control”. Paste in the url of the repository. That will clone the repo on to your local computer. When you make changes, you will need to push those up.</p>
-</section>
-<section id="step-3.-render-within-rstudio" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="step-3.-render-within-rstudio"><span class="header-section-number">5.3</span> Step 3. Render within RStudio</h2>
-<p>RStudio will recognize that this is a Quarto project by the presence of the <code>_quarto.yml</code> file and will see the “Build” tab. Click the “Render website” button to render to the <code>_site</code> folder.</p>
-<p><strong>Previewing:</strong> You can either click <code>index.html</code> in the <code>_site</code> folder and specify “preview in browser” or set up RStudio to preview to the viewer panel. To do the latter, go to Tools &gt; Global Options &gt; R Markdown. Then select “Show output preview in: Viewer panel”.</p>
+<section id="discussion" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="discussion"><span class="header-section-number">1.2</span> Discussion</h2>
+<p><a href="https://github.com/GrandOrgue/grandorgue">GrandOrgue</a> is free open source computer software supported for Windows, MacOS, and at least some Linux distributions. System and hardware requirements are summarized <a href="https://grandorgue.com/">here</a>, with the most important requirement being <strong>RAM</strong>.</p>
+<p>My initial installation was intended to proof-of-concept learning experiment to assess whether or not it was something I wanted to delve further into and scale up. I already had an old (circa 1997) Casio MIDI keyboard<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, so I decided to use that as the workbench test case for experimentation. Then, once I knew what I was doing and felt comfortable with the technical components, I wanted to transfer the setup to a MIDI-ready digital church organ to try it out “in the field” with an actual organ console, decent speakers, and a room where an organ is regularly used.</p>
+<p>With this in mind, I sought portability with minimal spatial footprint. Desktop computers took up too much space and are not easily portable, so they were out. Without having a personal organ at home, I needed to interface with the software directly through the computer rather than via an organ console, so I wanted to have a touch screen monitor that could be positioned in close proximity to the music keyboard. While standard laptops with touch screens are portable and could work, I would have to always reach over the laptop keyboard to reach the screen, which was not ideal. My solution was to use a <a href="https://www.raspberrypi.com/"><strong>Raspberry Pi</strong></a> together with a simple <strong>touch screen monitor</strong>.</p>
+<p>I opted for the <a href="https://www.raspberrypi.com/products/raspberry-pi-5/">Raspberry Pi 5</a> because it was the first and, as of 2026, only unit to support 16 GB of RAM. I purchased a full starter kit for $385 which included:</p>
+<ul>
+<li>Raspberry Pi 5 with 2.4Ghz 64-bit quad-core CPU and 64 GB of RAM</li>
+<li>128GB Micro SD Card pre-loaded with 64-bit Raspberry Pi OS, USB MicroSD Card Reader</li>
+<li>Plastic protective case</li>
+<li>Low noise bearing system fan</li>
+<li>Heat sink</li>
+<li>45W PD Power Supply</li>
+<li>2 6-foot display cables</li>
+</ul>
+<p>I bought a simple and compact <a href="https://www.amazon.com/dp/B0BPX1QSLV?ref=ppx_yo2ov_dt_b_fed_asin_title">15.6” portable touch screen monitor</a> for $95 as my primary means of interacting with GrandOrgue. An upgrade might be in store down the road, but this will due to start.</p>
+<p>Unfortunately, the Raspberry Pi 5 does not have a dedicated 3.5mm headphone audio jack like its predecessor. Audio is outputted through HDMI or USB instead. I ended up buying a <a href="https://www.amazon.com/dp/B00QHURLCW">Behringer UMC204HD</a> <strong>USB audio interface</strong> for $116 which would allow me to use a single USB port for both audio and to connect standard MIDI cables instead of a MIDI-USB cable. I also bought a 9.8-foot dual 5-pin <strong>MIDI cable</strong> for $11 to go along with that because I did not have one already.</p>
+<p>Altogether, my expenses for the initial set up came out to be just over $600:</p>
+<table class="caption-top table">
+<caption>Total cost of my initial proof-of-concept setup.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Expense</th>
+<th style="text-align: center;">Cost (USD)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Raspberry Pi 5 kit</td>
+<td style="text-align: center;">$385</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Behringer UMC204HD</td>
+<td style="text-align: center;">$116</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Touch screen monitor</td>
+<td style="text-align: center;">$95</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MIDI cable</td>
+<td style="text-align: center;">$11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Keyboard</td>
+<td style="text-align: center;">$0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>TOTAL</strong></td>
+<td style="text-align: center;"><strong>$607</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Not bad for an authentic-sounding practice organ! The pages that follow describe how I set up, configured, and tested everything.</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Old keyboards can almost always be found on Facebook Marketplace or similar sites for free or very little money. Just make sure it supports MIDI, which most manufactured after the 1980s will.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -642,13 +705,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/customizing.html" class="pagination-link" aria-label="Customization">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Customization</span></span>
+      <a href="../index.html" class="pagination-link" aria-label="Executive Summary">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Executive Summary</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/adding-refs.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">References</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../content/setup.html" class="pagination-link" aria-label="Set-up">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Set-up</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -660,7 +723,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/musicministry/grandorgue/edit/main/content/rendering.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/musicministry/grandorgue/blob/main/content/rendering.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/musicministry/grandorgue/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/musicministry/grandorgue/edit/main/content/hardware.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/musicministry/grandorgue/blob/main/content/hardware.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/musicministry/grandorgue/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
