@@ -67,7 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/add-content.html" rel="next">
+<link href="../content/customizing.html" rel="next">
 <link href="../content/hardware.html" rel="prev">
 <link href="../assets/pipes-favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -190,26 +190,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/add-content.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customize</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../content/customizing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Customization</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/rendering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Rendering</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/adding-refs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customization</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -263,13 +245,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="raspberry-pi-setup" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="raspberry-pi-setup"><span class="header-section-number">2.1</span> Raspberry Pi setup</h2>
-<p>Raspberry Pi (RPi) devices run Debian-based Raspberry Pi OS. GrandOrgue needs the 64-bit Raspberry Pi OS in order to utilize all of the installed RAM (a 32-bit OS would cap the usable RAM at 4 GB, regardless of what is installed in the system.) This comes pre-installed on the CanaKit RPi.</p>
-<p>If you don’t have the 64-bit version:</p>
-<ol type="1">
-<li>On another computer, open the RPi Imager and use the gear icon to pre-configure your Wi-Fi credentials, hostname, and enable SSH. This saves time on first boot.</li>
-<li>Use the Imager on this computer to flash Raspberry Pi OS (64-bit) to your RPi SD card. Be sure to choose to full desktop version.</li>
-</ol>
-<p>Back on the RPi, before installing anything, download and install any OS updates:</p>
+<p>Raspberry Pi (RPi) devices run Debian-based Raspberry Pi OS. GrandOrgue needs the 64-bit Raspberry Pi OS in order to utilize all of the installed RAM (a 32-bit OS would cap the usable RAM at 4 GB, regardless of what is installed in the system.) The 64-bit OS conveniently comes pre-installed on the CanaKit RPi.</p>
+<p>Before installing anything, download and install any OS updates:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt full-upgrade <span class="at">-y</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> reboot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>GrandOrgue <a href="https://github.com/GrandOrgue/grandorgue/blob/master/INSTALL.md">recommends X11</a> to properly handle window sizing and positioning. To switch the display mode:</p>
@@ -280,60 +257,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Select <strong>X11</strong>, then <strong>&lt;OK&gt;</strong></li>
 <li>Use the right arrow key to select <strong>&lt;Finish&gt;</strong> and then <strong>Reboot</strong></li>
 </ol>
-<p>The touch monitor is plug-and-play. Since the RPi 5 only has a single USB-C port, which is used for the power supply, the monitor needs to be connected to the RPi via both HDMI for data and USB for power. I used the HDMI to mini-HDMI cable that came with the RPi and the USB-C to USB-A cable that came with the monitor. The RPi did need to be rebooted after everything was plugged in for the touch screen to work properly.</p>
+<p>The touch monitor was plug-and-play. Since the RPi 5 only has a single USB-C port, which is used for the power supply, the monitor needed to be connected to the RPi via both HDMI for data and USB for power. I used the HDMI to mini-HDMI cable that came with the RPi and the USB-C to USB-A cable that came with the monitor. The RPi did need to be rebooted after everything was connected for the touch screen to work properly.</p>
 </section>
 <section id="grandorgue-installation" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="grandorgue-installation"><span class="header-section-number">2.2</span> GrandOrgue installation</h2>
 <p>From the <a href="https://github.com/GrandOrgue/grandorgue/releases">GrandOrgue releases GitHub</a>, download the <code>arm64.deb</code> architecture package. As of May 2026, the current release was <code>grandorgue_3.17.1-1_arm64.deb</code>. You can also download it directly in the terminal:</p>
-<pre class="{bash}"><code>wget https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue_3.17.1-1_arm64.deb</code></pre>
-<!-- There are also two companion packages worth grabbing:
-
-```qjarxc
-wget https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue-resources_3.17.1-1_all.deb
-wget https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue-demo_3.17.1-1_all.deb
-```
-
-The `-resources` package contains tutorials and documentation; `-demo` contains a small built-in sample set so you can verify everything works before loading a large organ. -->
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue_3.17.1-1_arm64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>(Note: <code>grandorgue</code> requires <strong>wxWidgets 3.2</strong> and <code>grandorgue-wx30</code> requires <strong>wxWidgets 3.0</strong>. Raspberry Pi OS Bookworm ships with wxWidgets 3.2, so the standard <code>grandorgue</code> package above is the correct one.)</p>
 <p>Install the software using either the downloaded installer or terminal:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install ./grandorgue_3.17.1-1_arm64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You might get a <code>Permission Denied</code> warning, but it can be ignored:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">N:</span> Download is performed unsandboxed as root as file <span class="st">'/home/username/grandorgue_3.17.1-1_arm64.deb'</span> couldn<span class="st">'t be accessed by user '</span>_apt<span class="st">'. - pkgAcquire::Run (13: Permission denied)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>It is not a fatal error; the application should have installed fine.</p>
-<p>Verify the installation by looking for it in the <strong>Sound &amp; Video</strong> application menu. Launch the program. It should open with the demo organ available.</p>
+<p>Verify the installation by looking for it in the <strong>Sound &amp; Video</strong> application menu. Launch the program. It should open and load the demo organ.</p>
 <section id="midi" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="midi"><span class="header-section-number">2.2.1</span> MIDI</h3>
 <p>Next, configure the MIDI hardware:</p>
 <ol type="1">
 <li>Plug in the Behringer UMC204HD USB audio interface to the RPi via USB and to the keyboard or organ using MIDI cables.</li>
-<li>Open GrandOrgue and go to File → Preferences → Audio. You should see the UMC204HD listed as an ALSA device. Select it, set the sample rate to 48000 Hz and start with 512 samples per buffer.</li>
+<li>Open GrandOrgue and go to <strong>File</strong> → <strong>Preferences</strong> → <strong>Audio</strong>. You should see the UMC204HD listed as an ALSA device. Select it, set the sample rate to 48000 Hz and start with 512 samples per buffer.</li>
 <li>You can tune the buffer size down later if latency feels sluggish, or up if you hear crackle.</li>
-<li>Go to File → Preferences → MIDI Devices. The UMC204HD’s MIDI ports should appear as ALSA MIDI devices.</li>
-<li>Enable the input port. Then load a sample set and use File → MIDI Recorder or just play a key. GrandOrgue will prompt you to map MIDI channels to manuals the first time.</li>
+<li>Go to <strong>File</strong> → <strong>Preferences</strong> → <strong>MIDI Devices</strong>. The UMC204HD’s MIDI ports should appear as ALSA MIDI devices.</li>
+<li>Enable the input port. Then load a sample set.</li>
 </ol>
 </section>
 <section id="grandorgue-configuration" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="grandorgue-configuration"><span class="header-section-number">2.2.2</span> GrandOrgue configuration</h3>
-<p>Lastly, we need to map MIDI channels between GrandOrgue and the instrument.</p>
+<p>Next, we need to map MIDI channels between GrandOrgue and the instrument.</p>
 <ol type="1">
-<li>Go to File → Settings → MIDI Devices</li>
-<li>Under “MIDI output devices”, make sure UNC204HD is selected. Click OK.</li>
+<li>Go to <strong>File</strong> → <strong>Settings</strong> → <strong>MIDI Devices</strong></li>
+<li>Under <strong>MIDI output devices</strong>, make sure UNC204HD is selected. Click <strong>OK</strong>.</li>
 <li>On the virtual pipe organ (VPO) console, right-click a virtual manual to map to.</li>
-<li>In the box that opens, click “Listen for Event”. Play a key on the keyboard you wish to map to that virtual organ manual.</li>
-<li>Click OK.</li>
+<li>In the box that opens, click <strong>Listen for Event</strong>. Play a key on the keyboard you wish to map to that virtual organ manual.</li>
+<li>Click <strong>OK</strong>.</li>
 </ol>
 <p>To reduce audio lag:</p>
 <ol type="1">
-<li>File → Settings → Audio</li>
-<li>Set the “Samples per buffer” to 256 or 128 (defaults to 512).</li>
+<li><strong>File</strong> → <strong>Settings</strong> → ((Audi))o</li>
+<li>Set the <strong>Samples per buffer</strong> to 256 or 128 (defaults to 512).</li>
 </ol>
-<p>The lower the buffer size, the lower the latency. At 48,000 Hz sample rate, 128 samples per buffer supposedly gives about 2.7 milliseconds of latency, which is completely imperceptible. The tradeoff is that very low buffer sizes can cause audio crackle or dropouts if the RPi can’t process audio fast enough, but the Pi 5 should be plenty powerful enough to handle 128 samples without trouble, especially with the demo sample set.</p>
-<p>Even at 128, I still noticed a lag, but it was better than when I started. It is possible that some delay is “built in” as the result of the sample recording. This remains to be determined. I am accustomed to old-technology, non-realistic digital organs where the sound is instantaneous, where many pipe organs have a slight (fraction of a second) lag between the time a key is depressed and the sound is actually heard.</p>
+<p>The lower the buffer size, the lower the latency. At 48,000 Hz sample rate, 128 samples per buffer supposedly gives about 2.7 milliseconds of latency, which is completely imperceptible. The tradeoff is that very low buffer sizes can cause audio crackle or dropouts if the RPi can’t process audio fast enough. The Pi 5 should, however, be plenty powerful enough to handle 128 samples without trouble, especially with the demo sample set.</p>
+<p>Even at 128 samples/buffer, I still noticed a lag, but it was better than when I started. It is possible that some delay is “built in” as the result of the sample recording. This remains to be determined. I am accustomed to old-technology, non-realistic digital organs on which the sound is instantaneous, whereas many pipe organs have a slight (fraction of a second) lag between the time a key is depressed and the sound is actually heard.</p>
 </section>
 <section id="audio" class="level3" data-number="2.2.3">
 <h3 data-number="2.2.3" class="anchored" data-anchor-id="audio"><span class="header-section-number">2.2.3</span> Audio</h3>
-<p>By default, the VPO plays through the computer speakers. In this setup, this means the speakers on the touch screen monitor. Much better sound quality can be obtained with better speakers or headphones.</p>
-<p>Bluetooth headphones may experience a fairly significant lag in audio. It did for me. Since my old keyboard did not have an Audio In jack, I could not channel the sound back to the keyboard speakers – which is just as well, because they are not very good either. The best (but not perfect) option was wired headphones plugged into the UNC204HD interface. The only headphones I owned had a 1/8” plug, so I had to use a 1/4”-1/8” adapter to connect them. There was a slight buzz, possibly resulting from the extra connection. It was annoying, but not bad enough to abandon the setup.</p>
+<p>By default, the VPO plays through the computer speakers – in this case, the speakers on the touch screen monitor. Much better sound quality can be obtained with better speakers or headphones.</p>
+<p>Bluetooth headphones may experience a fairly significant lag in audio. It did for me. Since my old keyboard did not have an Audio In jack, I could not channel the sound back to the keyboard speakers – which was just as well, because they are not very good either. The best (but not perfect) option was wired headphones plugged into the UNC204HD interface. The only headphones I owned had a 1/8” plug, so I had to use a 1/4”-1/8” adapter to connect them. There was a slight buzz, possibly resulting from the extra connection. It was annoying, but not bad enough to abandon the setup.</p>
 
 
 </section>
@@ -747,8 +716,8 @@ The `-resources` package contains tutorials and documentation; `-demo` contains 
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/add-content.html" class="pagination-link" aria-label="Customize">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customize</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../content/customizing.html" class="pagination-link" aria-label="Customization">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customization</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

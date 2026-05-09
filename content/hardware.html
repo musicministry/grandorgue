@@ -155,26 +155,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/add-content.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customize</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../content/customizing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Customization</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/rendering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Rendering</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../content/adding-refs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">References</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customization</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -241,9 +223,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="discussion" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="discussion"><span class="header-section-number">1.2</span> Discussion</h2>
 <p><a href="https://github.com/GrandOrgue/grandorgue">GrandOrgue</a> is free open source computer software supported for Windows, MacOS, and at least some Linux distributions. System and hardware requirements are summarized <a href="https://grandorgue.com/">here</a>, with the most important requirement being <strong>RAM</strong>.</p>
-<p>My initial installation was intended to proof-of-concept learning experiment to assess whether or not it was something I wanted to delve further into and scale up. I already had an old (circa 1997) Casio MIDI keyboard<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, so I decided to use that as the workbench test case for experimentation. Then, once I knew what I was doing and felt comfortable with the technical components, I wanted to transfer the setup to a MIDI-ready digital church organ to try it out “in the field” with an actual organ console, decent speakers, and a room where an organ is regularly used.</p>
+<p>My initial installation was intended to be a proof-of-concept learning experiment to assess whether or not it was something I wanted to delve further into and scale up. I already had an old (circa 1997) Casio MIDI keyboard<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, so I decided to use that as the workbench test case for experimentation. Then, once I knew what I was doing and felt comfortable with the technical components, I wanted to transfer the setup to a MIDI-ready digital church organ to try it out “in the field” with an actual organ console, decent speakers, and a room where an organ is regularly used.</p>
 <p>With this in mind, I sought portability with minimal spatial footprint. Desktop computers took up too much space and are not easily portable, so they were out. Without having a personal organ at home, I needed to interface with the software directly through the computer rather than via an organ console, so I wanted to have a touch screen monitor that could be positioned in close proximity to the music keyboard. While standard laptops with touch screens are portable and could work, I would have to always reach over the laptop keyboard to reach the screen, which was not ideal. My solution was to use a <a href="https://www.raspberrypi.com/"><strong>Raspberry Pi</strong></a> together with a simple <strong>touch screen monitor</strong>.</p>
-<p>I opted for the <a href="https://www.raspberrypi.com/products/raspberry-pi-5/">Raspberry Pi 5</a> because it was the first and, as of 2026, only unit to support 16 GB of RAM. I purchased a full starter kit for $385 which included:</p>
+<p>I opted for the <a href="https://www.raspberrypi.com/products/raspberry-pi-5/">Raspberry Pi 5</a> because it was the first and, as of 2026, only unit to contain 16 GB of RAM. I purchased a full <a href="https://www.canakit.com/canakit-raspberry-pi-5-starter-kit-turbine-black.html">CanaKit starter kit</a> for $385 which included:</p>
 <ul>
 <li>Raspberry Pi 5 with 2.4Ghz 64-bit quad-core CPU and 64 GB of RAM</li>
 <li>128GB Micro SD Card pre-loaded with 64-bit Raspberry Pi OS, USB MicroSD Card Reader</li>
@@ -291,14 +273,16 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>Not bad for an authentic-sounding practice organ! The pages that follow describe how I set up, configured, and tested everything.</p>
+<p><br></p>
 
 
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Old keyboards can almost always be found on Facebook Marketplace or similar sites for free or very little money. Just make sure it supports MIDI, which most manufactured after the 1980s will.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Old keyboards can almost always be found on Facebook Marketplace or similar sites for free or very little money. Just make sure it supports MIDI.Most manufactured after the 1980s will.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
