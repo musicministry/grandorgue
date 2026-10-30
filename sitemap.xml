@@ -2,30 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://musicministry.github.io/grandorgue/index.html</loc>
-    <lastmod>2026-05-09T04:14:50.326Z</lastmod>
+    <lastmod>2026-10-30T03:14:24.926Z</lastmod>
+  </url>
+  <url>
+    <loc>https://musicministry.github.io/grandorgue/content/quick-start.html</loc>
+    <lastmod>2026-10-30T03:14:24.923Z</lastmod>
   </url>
   <url>
     <loc>https://musicministry.github.io/grandorgue/content/hardware.html</loc>
-    <lastmod>2026-05-09T04:14:50.322Z</lastmod>
+    <lastmod>2026-10-30T03:14:24.923Z</lastmod>
   </url>
   <url>
-    <loc>https://musicministry.github.io/grandorgue/content/setup.html</loc>
-    <lastmod>2026-05-09T04:14:50.322Z</lastmod>
+    <loc>https://musicministry.github.io/grandorgue/content/keyboard.html</loc>
+    <lastmod>2026-10-30T03:14:24.923Z</lastmod>
+  </url>
+  <url>
+    <loc>https://musicministry.github.io/grandorgue/content/organ.html</loc>
+    <lastmod>2026-10-30T03:14:24.923Z</lastmod>
+  </url>
+  <url>
+    <loc>https://musicministry.github.io/grandorgue/content/software.html</loc>
+    <lastmod>2026-10-30T03:14:24.923Z</lastmod>
   </url>
   <url>
     <loc>https://musicministry.github.io/grandorgue/content/customizing.html</loc>
-    <lastmod>2026-05-09T04:14:50.322Z</lastmod>
+    <lastmod>2026-10-30T03:14:24.923Z</lastmod>
   </url>
   <url>
     <loc>https://musicministry.github.io/grandorgue/content/references.html</loc>
-    <lastmod>2026-05-09T04:14:50.322Z</lastmod>
+    <lastmod>2026-10-30T03:14:24.923Z</lastmod>
   </url>
   <url>
     <loc>https://musicministry.github.io/grandorgue/My-GrandOrgue-Implementation.pdf</loc>
-    <lastmod>2026-05-09T04:16:32.416Z</lastmod>
+    <lastmod>2026-10-30T03:16:24.267Z</lastmod>
   </url>
   <url>
     <loc>https://musicministry.github.io/grandorgue/My-GrandOrgue-Implementation.docx</loc>
-    <lastmod>2026-05-09T04:16:33.101Z</lastmod>
+    <lastmod>2026-10-30T03:16:25.385Z</lastmod>
   </url>
 </urlset>

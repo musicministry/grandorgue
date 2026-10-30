@@ -2,61 +2,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Set-up – My GrandOrgue Implementation</title>
+<title>Quick Start – My GrandOrgue Implementation</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -67,8 +35,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../content/customizing.html" rel="next">
-<link href="../content/hardware.html" rel="prev">
+<link href="../content/hardware.html" rel="next">
+<link href="../index.html" rel="prev">
 <link href="../assets/pipes-favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -76,10 +44,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-129f0af5aa3c9b58405bf8ff28bf60a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-64089571d32451420fecda1bfaadf9dc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -120,7 +88,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/setup.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Set-up</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/quick-start.html"><span class="chapter-title">Quick Start</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -178,20 +146,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/hardware.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hardware</span></span></a>
+  <a href="../content/quick-start.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Quick Start</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/setup.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Set-up</span></span></a>
+  <a href="../content/hardware.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Hardware Requirements</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Setup</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../content/keyboard.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">MIDI Keyboard</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../content/organ.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Digital Organ</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../content/software.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Software</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/customizing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customization</span></span></a>
+  <a href="../content/customizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Customization</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -210,23 +201,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#raspberry-pi-setup" id="toc-raspberry-pi-setup" class="nav-link active" data-scroll-target="#raspberry-pi-setup"><span class="header-section-number">2.1</span> Raspberry Pi setup</a></li>
-  <li><a href="#grandorgue-installation" id="toc-grandorgue-installation" class="nav-link" data-scroll-target="#grandorgue-installation"><span class="header-section-number">2.2</span> GrandOrgue installation</a>
-  <ul class="collapse">
-  <li><a href="#midi" id="toc-midi" class="nav-link" data-scroll-target="#midi"><span class="header-section-number">2.2.1</span> MIDI</a></li>
-  <li><a href="#grandorgue-configuration" id="toc-grandorgue-configuration" class="nav-link" data-scroll-target="#grandorgue-configuration"><span class="header-section-number">2.2.2</span> GrandOrgue configuration</a></li>
-  <li><a href="#audio" id="toc-audio" class="nav-link" data-scroll-target="#audio"><span class="header-section-number">2.2.3</span> Audio</a></li>
-  </ul></li>
+  <li><a href="#hardware" id="toc-hardware" class="nav-link active" data-scroll-target="#hardware">Hardware</a></li>
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/musicministry/grandorgue/edit/main/content/setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/musicministry/grandorgue/blob/main/content/setup.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/musicministry/grandorgue/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/musicministry/grandorgue/edit/main/content/quick-start.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/musicministry/grandorgue/blob/main/content/quick-start.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/musicministry/grandorgue/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Set-up</span></h1>
-<p class="subtitle lead">Setting up the hardware and software for GrandOrgue</p>
+<h1 class="title"><span class="chapter-title">Quick Start</span></h1>
+<p class="subtitle lead">After everything has been set up the first time</p>
 </div>
 
 
@@ -243,69 +230,98 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="raspberry-pi-setup" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="raspberry-pi-setup"><span class="header-section-number">2.1</span> Raspberry Pi setup</h2>
-<p>Raspberry Pi (RPi) devices run Debian-based Raspberry Pi OS. GrandOrgue needs the 64-bit Raspberry Pi OS in order to utilize all of the installed RAM (a 32-bit OS would cap the usable RAM at 4 GB, regardless of what is installed in the system.) The 64-bit OS conveniently comes pre-installed on the CanaKit RPi.</p>
-<p>Before installing anything, download and install any OS updates:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt full-upgrade <span class="at">-y</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> reboot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>GrandOrgue <a href="https://github.com/GrandOrgue/grandorgue/blob/master/INSTALL.md">recommends X11</a> to properly handle window sizing and positioning. To switch the display mode:</p>
-<ol type="1">
-<li>Open a terminal and run <code>sudo raspi-config</code></li>
-<li>Use the down arrow key to select <strong>Advanced Options</strong></li>
-<li>In the next menu, select <strong>Wayland</strong></li>
-<li>Select <strong>X11</strong>, then <strong>&lt;OK&gt;</strong></li>
-<li>Use the right arrow key to select <strong>&lt;Finish&gt;</strong> and then <strong>Reboot</strong></li>
-</ol>
-<p>The touch monitor was plug-and-play. Since the RPi 5 only has a single USB-C port, which is used for the power supply, the monitor needed to be connected to the RPi via both HDMI for data and USB for power. I used the HDMI to mini-HDMI cable that came with the RPi and the USB-C to USB-A cable that came with the monitor. The RPi did need to be rebooted after everything was connected for the touch screen to work properly.</p>
+<section id="hardware" class="level2">
+<h2 class="anchored" data-anchor-id="hardware">Hardware</h2>
+<table class="caption-top table">
+<caption>Virtual pipe organ on Raspberry Pi hardware setup</caption>
+<colgroup>
+<col style="width: 34%">
+<col style="width: 8%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Connect…</th>
+<th style="text-align: center;"></th>
+<th style="text-align: left;">…to…</th>
+<th style="text-align: left;">…using</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Monitor</td>
+<td style="text-align: center;">→</td>
+<td style="text-align: left;">Raspberry Pi</td>
+<td style="text-align: left;">HDMI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Monitor</td>
+<td style="text-align: center;">→</td>
+<td style="text-align: left;">Raspberry Pi</td>
+<td style="text-align: left;">USB, white port</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Audio interface</td>
+<td style="text-align: center;">→</td>
+<td style="text-align: left;">Raspberry Pi</td>
+<td style="text-align: left;">USB, blue port</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Audio interface</td>
+<td style="text-align: center;">→</td>
+<td style="text-align: left;">MIDI keyboard</td>
+<td style="text-align: left;">MIDI cable<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Computer keyboard / mouse</td>
+<td style="text-align: center;">→</td>
+<td style="text-align: left;">Raspberry Pi</td>
+<td style="text-align: left;">USB, white first, then blue</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Raspberry Pi</td>
+<td style="text-align: center;">→</td>
+<td style="text-align: left;">AC power</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MIDI Keyboard</td>
+<td style="text-align: center;">→</td>
+<td style="text-align: left;">AC power</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Headphones or speakers</td>
+<td style="text-align: center;">→</td>
+<td style="text-align: left;">audio interface (preferred)</td>
+<td style="text-align: left;">Wired (preferred)</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="grandorgue-installation" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="grandorgue-installation"><span class="header-section-number">2.2</span> GrandOrgue installation</h2>
-<p>From the <a href="https://github.com/GrandOrgue/grandorgue/releases">GrandOrgue releases GitHub</a>, download the <code>arm64.deb</code> architecture package. As of May 2026, the current release was <code>grandorgue_3.17.1-1_arm64.deb</code>. You can also download it directly in the terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue_3.17.1-1_arm64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>(Note: <code>grandorgue</code> requires <strong>wxWidgets 3.2</strong> and <code>grandorgue-wx30</code> requires <strong>wxWidgets 3.0</strong>. Raspberry Pi OS Bookworm ships with wxWidgets 3.2, so the standard <code>grandorgue</code> package above is the correct one.)</p>
-<p>Install the software using either the downloaded installer or terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install ./grandorgue_3.17.1-1_arm64.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You might get a <code>Permission Denied</code> warning, but it can be ignored:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">N:</span> Download is performed unsandboxed as root as file <span class="st">'/home/username/grandorgue_3.17.1-1_arm64.deb'</span> couldn<span class="st">'t be accessed by user '</span>_apt<span class="st">'. - pkgAcquire::Run (13: Permission denied)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>It is not a fatal error; the application should have installed fine.</p>
-<p>Verify the installation by looking for it in the <strong>Sound &amp; Video</strong> application menu. Launch the program. It should open and load the demo organ.</p>
-<section id="midi" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="midi"><span class="header-section-number">2.2.1</span> MIDI</h3>
-<p>Next, configure the MIDI hardware:</p>
+<section id="software" class="level2">
+<h2 class="anchored" data-anchor-id="software">Software</h2>
 <ol type="1">
-<li>Plug in the Behringer UMC204HD USB audio interface to the RPi via USB and to the keyboard or organ using MIDI cables.</li>
-<li>Open GrandOrgue and go to <strong>File</strong> → <strong>Preferences</strong> → <strong>Audio</strong>. You should see the UMC204HD listed as an ALSA device. Select it, set the sample rate to 48000 Hz and start with 512 samples per buffer.</li>
-<li>You can tune the buffer size down later if latency feels sluggish, or up if you hear crackle.</li>
-<li>Go to <strong>File</strong> → <strong>Preferences</strong> → <strong>MIDI Devices</strong>. The UMC204HD’s MIDI ports should appear as ALSA MIDI devices.</li>
-<li>Enable the input port. Then load a sample set.</li>
+<li>Boot Raspberry Pi</li>
+<li>Turn on keyboard</li>
+<li>Launch GrandOrgue</li>
 </ol>
 </section>
-<section id="grandorgue-configuration" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="grandorgue-configuration"><span class="header-section-number">2.2.2</span> GrandOrgue configuration</h3>
-<p>Next, we need to map MIDI channels between GrandOrgue and the instrument.</p>
+<section id="troubleshooting" class="level2">
+<h2 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h2>
 <ol type="1">
-<li>Go to <strong>File</strong> → <strong>Settings</strong> → <strong>MIDI Devices</strong></li>
-<li>Under <strong>MIDI output devices</strong>, make sure UNC204HD is selected. Click <strong>OK</strong>.</li>
-<li>On the virtual pipe organ (VPO) console, right-click a virtual manual to map to.</li>
-<li>In the box that opens, click <strong>Listen for Event</strong>. Play a key on the keyboard you wish to map to that virtual organ manual.</li>
-<li>Click <strong>OK</strong>.</li>
+<li>Verify the correct <a href="setup.qmd#grandorgue-configuration">audio output</a> is selected</li>
+<li>If using an audio interface, ensure the <a href="setup.qmd#audio">monitor switches and volume knobs</a> are set properly</li>
 </ol>
-<p>To reduce audio lag:</p>
-<ol type="1">
-<li><strong>File</strong> → <strong>Settings</strong> → ((Audi))o</li>
-<li>Set the <strong>Samples per buffer</strong> to 256 or 128 (defaults to 512).</li>
-</ol>
-<p>The lower the buffer size, the lower the latency. At 48,000 Hz sample rate, 128 samples per buffer supposedly gives about 2.7 milliseconds of latency, which is completely imperceptible. The tradeoff is that very low buffer sizes can cause audio crackle or dropouts if the RPi can’t process audio fast enough. The Pi 5 should, however, be plenty powerful enough to handle 128 samples without trouble, especially with the demo sample set.</p>
-<p>Even at 128 samples/buffer, I still noticed a lag, but it was better than when I started. It is possible that some delay is “built in” as the result of the sample recording. This remains to be determined. I am accustomed to old-technology, non-realistic digital organs on which the sound is instantaneous, whereas many pipe organs have a slight (fraction of a second) lag between the time a key is depressed and the sound is actually heard.</p>
-</section>
-<section id="audio" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="audio"><span class="header-section-number">2.2.3</span> Audio</h3>
-<p>By default, the VPO plays through the computer speakers – in this case, the speakers on the touch screen monitor. Much better sound quality can be obtained with better speakers or headphones.</p>
-<p>Bluetooth headphones may experience a fairly significant lag in audio. It did for me. Since my old keyboard did not have an Audio In jack, I could not channel the sound back to the keyboard speakers – which was just as well, because they are not very good either. The best (but not perfect) option was wired headphones plugged into the UNC204HD interface. The only headphones I owned had a 1/8” plug, so I had to use a 1/4”-1/8” adapter to connect them. There was a slight buzz, possibly resulting from the extra connection. It was annoying, but not bad enough to abandon the setup.</p>
 
 
 </section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Be sure to connect <strong>MIDI OUT</strong> from the keyboard or organ to <strong>MIDI IN</strong> on the audio interface.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -711,13 +727,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../content/hardware.html" class="pagination-link" aria-label="Hardware">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Hardware</span></span>
+      <a href="../index.html" class="pagination-link" aria-label="Executive Summary">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Executive Summary</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../content/customizing.html" class="pagination-link" aria-label="Customization">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customization</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../content/hardware.html" class="pagination-link" aria-label="Hardware Requirements">
+        <span class="nav-page-text"><span class="chapter-title">Hardware Requirements</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -729,7 +745,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/musicministry/grandorgue/edit/main/content/setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/musicministry/grandorgue/blob/main/content/setup.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/musicministry/grandorgue/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/musicministry/grandorgue/edit/main/content/quick-start.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/musicministry/grandorgue/blob/main/content/quick-start.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/musicministry/grandorgue/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

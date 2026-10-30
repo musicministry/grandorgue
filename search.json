@@ -10,93 +10,179 @@
     ]
   },
   {
+    "objectID": "content/quick-start.html",
+    "href": "content/quick-start.html",
+    "title": "Quick Start",
+    "section": "",
+    "text": "Hardware",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Quick Start</span>"
+    ]
+  },
+  {
+    "objectID": "content/quick-start.html#hardware",
+    "href": "content/quick-start.html#hardware",
+    "title": "Quick Start",
+    "section": "",
+    "text": "Virtual pipe organ on Raspberry Pi hardware setup\n\n\n\n\n\n\n\n\nConnect…\n\n…to…\n…using\n\n\n\n\nMonitor\n→\nRaspberry Pi\nHDMI\n\n\nMonitor\n→\nRaspberry Pi\nUSB, white port\n\n\nAudio interface\n→\nRaspberry Pi\nUSB, blue port\n\n\nAudio interface\n→\nMIDI keyboard\nMIDI cable1\n\n\nComputer keyboard / mouse\n→\nRaspberry Pi\nUSB, white first, then blue\n\n\nRaspberry Pi\n→\nAC power\n\n\n\nMIDI Keyboard\n→\nAC power\n\n\n\nHeadphones or speakers\n→\naudio interface (preferred)\nWired (preferred)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Quick Start</span>"
+    ]
+  },
+  {
+    "objectID": "content/quick-start.html#software",
+    "href": "content/quick-start.html#software",
+    "title": "Quick Start",
+    "section": "Software",
+    "text": "Software\n\nBoot Raspberry Pi\nTurn on keyboard\nLaunch GrandOrgue",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Quick Start</span>"
+    ]
+  },
+  {
+    "objectID": "content/quick-start.html#troubleshooting",
+    "href": "content/quick-start.html#troubleshooting",
+    "title": "Quick Start",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\n\nVerify the correct audio output is selected\nIf using an audio interface, ensure the monitor switches and volume knobs are set properly",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Quick Start</span>"
+    ]
+  },
+  {
+    "objectID": "content/quick-start.html#footnotes",
+    "href": "content/quick-start.html#footnotes",
+    "title": "Quick Start",
+    "section": "",
+    "text": "Be sure to connect MIDI OUT from the keyboard or organ to MIDI IN on the audio interface.↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Quick Start</span>"
+    ]
+  },
+  {
     "objectID": "content/hardware.html",
     "href": "content/hardware.html",
-    "title": "1  Hardware",
+    "title": "Hardware Requirements",
     "section": "",
-    "text": "1.1 BLUF\nThe minimum requirements needed to get started with GrandOrgue are:\nAnd, if you don’t want the sound to play from your computer speakers:",
+    "text": "BLUF\nThe minimum requirements needed to get started with GrandOrgue are:\nAnd, if you don’t want the sound to play from your computer speakers:",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Hardware</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Hardware Requirements</span>"
     ]
   },
   {
     "objectID": "content/hardware.html#bluf",
     "href": "content/hardware.html#bluf",
-    "title": "1  Hardware",
+    "title": "Hardware Requirements",
     "section": "",
-    "text": "Computer with at least 8 GB RAM (16+ GB preferred)\nTouch screen monitor (for interacting with virtual console controls)\nMIDI-USB cable or MIDI cable with a USB audio interface device for connecting the computer to the MIDI instrument\nMIDI-ready organ or keyboard\n\n\n\nAudio cable to port audio from computer to an organ amplifier\nor\n\nQuality external speakers to connect directly to the computer",
+    "text": "Computer with at least 8 GB RAM (16+ GB preferred)\nTouch screen monitor (for interacting with virtual console controls)\nMIDI-USB cable or MIDI cable with a USB audio interface device for connecting the computer to the MIDI instrument\nMIDI-ready organ or keyboard\n\n\n\nAudio cable to port audio from computer to an organ amplifier\nor\n\nQuality external speakers or headphones to connect directly to the computer",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Hardware</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Hardware Requirements</span>"
     ]
   },
   {
     "objectID": "content/hardware.html#discussion",
     "href": "content/hardware.html#discussion",
-    "title": "1  Hardware",
-    "section": "1.2 Discussion",
-    "text": "1.2 Discussion\nGrandOrgue is free open source computer software supported for Windows, MacOS, and at least some Linux distributions. System and hardware requirements are summarized here, with the most important requirement being RAM.\nMy initial installation was intended to be a proof-of-concept learning experiment to assess whether or not it was something I wanted to delve further into and scale up. I already had an old (circa 1997) Casio MIDI keyboard1, so I decided to use that as the workbench test case for experimentation. Then, once I knew what I was doing and felt comfortable with the technical components, I wanted to transfer the setup to a MIDI-ready digital church organ to try it out “in the field” with an actual organ console, decent speakers, and a room where an organ is regularly used.\nWith this in mind, I sought portability with minimal spatial footprint. Desktop computers took up too much space and are not easily portable, so they were out. Without having a personal organ at home, I needed to interface with the software directly through the computer rather than via an organ console, so I wanted to have a touch screen monitor that could be positioned in close proximity to the music keyboard. While standard laptops with touch screens are portable and could work, I would have to always reach over the laptop keyboard to reach the screen, which was not ideal. My solution was to use a Raspberry Pi together with a simple touch screen monitor.\nI opted for the Raspberry Pi 5 because it was the first and, as of 2026, only unit to contain 16 GB of RAM. I purchased a full CanaKit starter kit for $385 which included:\n\nRaspberry Pi 5 with 2.4Ghz 64-bit quad-core CPU and 64 GB of RAM\n128GB Micro SD Card pre-loaded with 64-bit Raspberry Pi OS, USB MicroSD Card Reader\nPlastic protective case\nLow noise bearing system fan\nHeat sink\n45W PD Power Supply\n2 6-foot display cables\n\nI bought a simple and compact 15.6” portable touch screen monitor for $95 as my primary means of interacting with GrandOrgue. An upgrade might be in store down the road, but this will due to start.\nUnfortunately, the Raspberry Pi 5 does not have a dedicated 3.5mm headphone audio jack like its predecessor. Audio is outputted through HDMI or USB instead. I ended up buying a Behringer UMC204HD USB audio interface for $116 which would allow me to use a single USB port for both audio and to connect standard MIDI cables instead of a MIDI-USB cable. I also bought a 9.8-foot dual 5-pin MIDI cable for $11 to go along with that because I did not have one already.\nAltogether, my expenses for the initial set up came out to be just over $600:\n\nTotal cost of my initial proof-of-concept setup.\n\n\nExpense\nCost (USD)\n\n\n\n\nRaspberry Pi 5 kit\n$385\n\n\nBehringer UMC204HD\n$116\n\n\nTouch screen monitor\n$95\n\n\nMIDI cable\n$11\n\n\nKeyboard\n$0\n\n\nTOTAL\n$607\n\n\n\n\nNot bad for an authentic-sounding practice organ! The pages that follow describe how I set up, configured, and tested everything.",
+    "title": "Hardware Requirements",
+    "section": "Discussion",
+    "text": "Discussion\nGrandOrgue is free open source computer software supported for Windows, MacOS, and at least some Linux distributions. System and hardware requirements are summarized here, with the most important requirement being RAM.\nMy initial installation was intended to be a proof-of-concept learning experiment to assess whether or not it was something I wanted to delve further into and scale up. I already had an old (circa 1997) Casio MIDI keyboard1, so I decided to use that as the workbench test case for experimentation. Then, once I knew what I was doing and felt comfortable with the technical components, I wanted to transfer the setup to a MIDI-ready digital church organ to try it out “in the field” with an actual organ console, decent speakers, and a room where an organ is regularly used.\nWith this in mind, I sought portability with minimal spatial footprint. Desktop computers took up too much space and are not easily portable, so they were out. Without having a personal organ at home, I needed to interface with the software directly through the computer rather than via an organ console, so I wanted to have a touch screen monitor that could be positioned in close proximity to the music keyboard. While standard laptops with touch screens are portable and could work, I would have to always reach over the laptop keyboard to reach the screen, which was not ideal. My solution was to use a Raspberry Pi together with a simple touch screen monitor.\nI opted for the Raspberry Pi 5 because it was the first and, as of 2026, only unit to contain 16 GB of RAM. I purchased a full CanaKit starter kit which included:\n\nRaspberry Pi 5 with 2.4Ghz 64-bit quad-core CPU and 64 GB of RAM\n128GB Micro SD Card pre-loaded with 64-bit Raspberry Pi OS, USB MicroSD Card Reader\nPlastic protective case\nLow noise bearing system fan\nHeat sink\n45W PD Power Supply\n2 6-foot display cables\n\nI bought a simple and compact 15.6” portable touch screen monitor for my primary means of interacting with GrandOrgue. An upgrade might be in store down the road, but this will due to start.\nUnfortunately, the Raspberry Pi 5 does not have a dedicated 3.5mm headphone audio jack like its predecessor. Audio is outputted through HDMI or USB instead. I ended up buying a Behringer UMC204HD USB audio interface which would allow me to use a single USB port for both audio and to connect standard MIDI cables instead of a MIDI-USB cable. I also bought a 9.8-foot dual 5-pin MIDI cable to go along with that because I did not have one already.\nAltogether, my expenses for the initial set up came out to be just over $600:\n\nTotal cost of my initial proof-of-concept setup.\n\n\nExpense\nCost (USD)\n\n\n\n\nRaspberry Pi 5 kit\n$385\n\n\nBehringer UMC204HD\n$116\n\n\nTouch screen monitor\n$95\n\n\nMIDI cable\n$11\n\n\nKeyboard\n$0\n\n\nTOTAL\n$607\n\n\n\n\nNot bad for an authentic-sounding practice organ! The pages that follow describe how I set up, configured, and tested everything.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Hardware</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Hardware Requirements</span>"
     ]
   },
   {
     "objectID": "content/hardware.html#footnotes",
     "href": "content/hardware.html#footnotes",
-    "title": "1  Hardware",
+    "title": "Hardware Requirements",
     "section": "",
-    "text": "Old keyboards can almost always be found on Facebook Marketplace or similar sites for free or very little money. Just make sure it supports MIDI.Most manufactured after the 1980s will.↩︎",
+    "text": "Old keyboards can almost always be found on Facebook Marketplace or similar sites for free or very little money. Just make sure it supports MIDI. Most manufactured after the 1980s will.↩︎",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Hardware</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Hardware Requirements</span>"
     ]
   },
   {
-    "objectID": "content/setup.html",
-    "href": "content/setup.html",
-    "title": "2  Set-up",
+    "objectID": "content/keyboard.html",
+    "href": "content/keyboard.html",
+    "title": "MIDI Keyboard",
     "section": "",
-    "text": "2.1 Raspberry Pi setup\nRaspberry Pi (RPi) devices run Debian-based Raspberry Pi OS. GrandOrgue needs the 64-bit Raspberry Pi OS in order to utilize all of the installed RAM (a 32-bit OS would cap the usable RAM at 4 GB, regardless of what is installed in the system.) The 64-bit OS conveniently comes pre-installed on the CanaKit RPi.\nBefore installing anything, download and install any OS updates:\nGrandOrgue recommends X11 to properly handle window sizing and positioning. To switch the display mode:\nThe touch monitor was plug-and-play. Since the RPi 5 only has a single USB-C port, which is used for the power supply, the monitor needed to be connected to the RPi via both HDMI for data and USB for power. I used the HDMI to mini-HDMI cable that came with the RPi and the USB-C to USB-A cable that came with the monitor. The RPi did need to be rebooted after everything was connected for the touch screen to work properly.",
+    "text": "To summarize\nThis page describes how to set up GrandOrgue with a single MIDI-capable keyboard.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Set-up</span>"
+      "Setup",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>MIDI Keyboard</span>"
     ]
   },
   {
-    "objectID": "content/setup.html#raspberry-pi-setup",
-    "href": "content/setup.html#raspberry-pi-setup",
-    "title": "2  Set-up",
+    "objectID": "content/keyboard.html#footnotes",
+    "href": "content/keyboard.html#footnotes",
+    "title": "MIDI Keyboard",
     "section": "",
-    "text": "sudo apt update && sudo apt full-upgrade -y\nsudo reboot\n\n\nOpen a terminal and run sudo raspi-config\nUse the down arrow key to select Advanced Options\nIn the next menu, select Wayland\nSelect X11, then &lt;OK&gt;\nUse the right arrow key to select &lt;Finish&gt; and then Reboot",
+    "text": "Be sure to connect MIDI OUT from the keyboard or organ to MIDI IN on the audio interface.↩︎",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Set-up</span>"
+      "Setup",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>MIDI Keyboard</span>"
     ]
   },
   {
-    "objectID": "content/setup.html#grandorgue-installation",
-    "href": "content/setup.html#grandorgue-installation",
-    "title": "2  Set-up",
-    "section": "2.2 GrandOrgue installation",
-    "text": "2.2 GrandOrgue installation\nFrom the GrandOrgue releases GitHub, download the arm64.deb architecture package. As of May 2026, the current release was grandorgue_3.17.1-1_arm64.deb. You can also download it directly in the terminal:\nwget https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue_3.17.1-1_arm64.deb\n(Note: grandorgue requires wxWidgets 3.2 and grandorgue-wx30 requires wxWidgets 3.0. Raspberry Pi OS Bookworm ships with wxWidgets 3.2, so the standard grandorgue package above is the correct one.)\nInstall the software using either the downloaded installer or terminal:\nsudo apt install ./grandorgue_3.17.1-1_arm64.deb\nYou might get a Permission Denied warning, but it can be ignored:\nN: Download is performed unsandboxed as root as file '/home/username/grandorgue_3.17.1-1_arm64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\nIt is not a fatal error; the application should have installed fine.\nVerify the installation by looking for it in the Sound & Video application menu. Launch the program. It should open and load the demo organ.\n\n2.2.1 MIDI\nNext, configure the MIDI hardware:\n\nPlug in the Behringer UMC204HD USB audio interface to the RPi via USB and to the keyboard or organ using MIDI cables.\nOpen GrandOrgue and go to File → Preferences → Audio. You should see the UMC204HD listed as an ALSA device. Select it, set the sample rate to 48000 Hz and start with 512 samples per buffer.\nYou can tune the buffer size down later if latency feels sluggish, or up if you hear crackle.\nGo to File → Preferences → MIDI Devices. The UMC204HD’s MIDI ports should appear as ALSA MIDI devices.\nEnable the input port. Then load a sample set.\n\n\n\n2.2.2 GrandOrgue configuration\nNext, we need to map MIDI channels between GrandOrgue and the instrument.\n\nGo to File → Settings → MIDI Devices\nUnder MIDI output devices, make sure UNC204HD is selected. Click OK.\nOn the virtual pipe organ (VPO) console, right-click a virtual manual to map to.\nIn the box that opens, click Listen for Event. Play a key on the keyboard you wish to map to that virtual organ manual.\nClick OK.\n\nTo reduce audio lag:\n\nFile → Settings → ((Audi))o\nSet the Samples per buffer to 256 or 128 (defaults to 512).\n\nThe lower the buffer size, the lower the latency. At 48,000 Hz sample rate, 128 samples per buffer supposedly gives about 2.7 milliseconds of latency, which is completely imperceptible. The tradeoff is that very low buffer sizes can cause audio crackle or dropouts if the RPi can’t process audio fast enough. The Pi 5 should, however, be plenty powerful enough to handle 128 samples without trouble, especially with the demo sample set.\nEven at 128 samples/buffer, I still noticed a lag, but it was better than when I started. It is possible that some delay is “built in” as the result of the sample recording. This remains to be determined. I am accustomed to old-technology, non-realistic digital organs on which the sound is instantaneous, whereas many pipe organs have a slight (fraction of a second) lag between the time a key is depressed and the sound is actually heard.\n\n\n2.2.3 Audio\nBy default, the VPO plays through the computer speakers – in this case, the speakers on the touch screen monitor. Much better sound quality can be obtained with better speakers or headphones.\nBluetooth headphones may experience a fairly significant lag in audio. It did for me. Since my old keyboard did not have an Audio In jack, I could not channel the sound back to the keyboard speakers – which was just as well, because they are not very good either. The best (but not perfect) option was wired headphones plugged into the UNC204HD interface. The only headphones I owned had a 1/8” plug, so I had to use a 1/4”-1/8” adapter to connect them. There was a slight buzz, possibly resulting from the extra connection. It was annoying, but not bad enough to abandon the setup.",
+    "objectID": "content/organ.html",
+    "href": "content/organ.html",
+    "title": "Digital Organ",
+    "section": "",
+    "text": "This page describes how to set up GrandOrgue with a MIDI-equipped digital organ.\n\nConnect the touchscreen monitor to the Raspberry Pi (RPi) using an HDMI cable and a USB cable plugged into a white USB 2.0 port. The monitor needs both cables to handle video, audio, and mouse commands.\nConnect the Behringer UMC204HD USB audio interface to the RPi using a USB cable plugged into a blue USB 3.0 port.\nConnect the organ MIDI OUT to the audio interface MIDI IN. This enables the organ console to control the GrandOrgue software. Since the software won’t be controlling the organ console in any way, there is no need for a second MIDI cable. If the organ has separate switched and unswitched MIDI ports, using switched ports will require the divisional MIDI stops to be engaged in order for the virtual organ to sound through the speakers, while using unswitched ports will allow the virtual organ to speak regardless of whether the divisional MIDI stops are engaged. The second option is more intuitive for most applications.\nTo utilize the digital organ speakers, connect the audio interface AUDIO OUT to audio line inputs on the organ. This will require either two 1/4” TRS or a two-channel RCA cable, depending on the organ.\nIf using an external keyboard or mouse, connect to it to the RPi using either the white USB 2.0 port (preferred) or the remaining blue USB 3.0 port.\nConnect the power supplies to the RPi.\n\n\nTo summarize\n\nUsing a virtual pipe organ on Raspberry Pi with a MIDI-equipped digital organ\n\n\n\n\n\n\n\n\nConnect…\n\n…to…\n…using\n\n\n\n\nMonitor\n→\nRaspberry Pi\nHDMI\n\n\nMonitor\n→\nRaspberry Pi\nUSB, white port\n\n\nAudio interface\n→\nRaspberry Pi\nUSB, blue port\n\n\nAudio interface MIDI IN\n→\nOrgan MIDI OUT (unswitched preferred)\nMIDI cable\n\n\nAudio interface AUDIO OUT\n→\nOrgan audio LINE IN\nTwo-channel RCA cable or two 1/4” TRS cables\n\n\nComputer keyboard / mouse\n→\nRaspberry Pi\nUSB, white first, then blue\n\n\nRaspberry Pi\n→\nAC power\n\n\n\nMIDI Keyboard\n→\nAC power",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Set-up</span>"
+      "Setup",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Digital Organ</span>"
+    ]
+  },
+  {
+    "objectID": "content/software.html",
+    "href": "content/software.html",
+    "title": "Software",
+    "section": "",
+    "text": "Raspberry Pi setup\nRaspberry Pi (RPi) devices run Debian-based Raspberry Pi OS. GrandOrgue needs the 64-bit Raspberry Pi OS in order to utilize all of the installed RAM (a 32-bit OS would cap the usable RAM at 4 GB, regardless of what is installed in the system.) The 64-bit OS conveniently comes pre-installed on the CanaKit RPi.\nBefore installing anything, download and install any OS updates:\nGrandOrgue recommends X11 to properly handle window sizing and positioning. To switch the display mode:\nThe touch monitor is plug-and-play. Since the RPi 5 only has a single USB-C port, which is used for the power supply, the monitor needs to be connected to the RPi via both HDMI for data and USB for power. I used the HDMI to mini-HDMI cable that came with the RPi and the USB-C to USB-A cable that came with the monitor. The RPi needed to be rebooted after everything was connected for the touch screen to work properly.",
+    "crumbs": [
+      "Setup",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Software</span>"
+    ]
+  },
+  {
+    "objectID": "content/software.html#raspberry-pi-setup",
+    "href": "content/software.html#raspberry-pi-setup",
+    "title": "Software",
+    "section": "",
+    "text": "sudo apt update && sudo apt full-upgrade -y\nsudo reboot\n\n\nOpen a terminal and run\nsudo raspi-config\nUse the down arrow key to select Advanced Options\nIn the next menu, select Wayland\nSelect X11, then &lt;OK&gt;\nUse the right arrow key to select &lt;Finish&gt; and then Reboot\n\n\n\nSet Screen Resolution\nThe Pi occasionally fails to read the monitor’s EDID (Extended Display Identification Data) on boot and defaults to 1024x768. Force the correct resolution by adding these lines to the boot config:\nsudo nano /boot/firmware/config.txt\nAdd at the bottom:\nhdmi_force_hotplug=1\nhdmi_group=2\nhdmi_mode=82\nhdmi_force_hotplug=1 — forces Pi to treat HDMI as always connected\nhdmi_group=2 — sets DMT (Display Monitor Timings) mode for computer monitors\nhdmi_mode=82 — forces 1920x1080 at 60Hz\n\n\nTouch screen right-click\nThere was no discernable way to right-click on the touch screen by default on the X11 release of Raspberry Pi OS. This can be fixed by telling X11, the software layer that manages the display and interprets input, to treat a specific pattern of touch behavior, such as briefly holding a finger still on a spot, as a right-click signal. To do this, we need to set three settings:\n\nEmulateThirdButton to turns the feature on\nEmulateThirdButtonTimeout to set how long to hold before it triggers, in milliseconds. 750 is long enough that normal taps don’t accidentally trigger it, but short enough to feel responsive.\nEmulateThirdButtonMoveThreshold to set how many pixels your finger is allowed to drift during the hold before the gesture is cancelled. This prevents accidental right-clicks when you’re just resting your finger briefly while scrolling or moving around the screen.\n\nOpen a terminal window and enter:\nsudo nano /usr/share/X11/xorg.conf.d/99-ilitek-touch.conf\nIf this file exists, add the following inside the Section \"InputClass\" block:\nOption \"EmulateThirdButton\" \"1\"\nOption \"EmulateThirdButtonTimeout\" \"750\"\nOption \"EmulateThirdButtonMoveThreshold\" \"30\"\nIf the file that opens is blank, paste the following in it:\nSection \"InputClass\"\n    Identifier \"ILITEK Touch\"\n    MatchProduct \"ILITEK ILITEK-TP\"\n    MatchIsTouchscreen \"on\"\n    Option \"TransformationMatrix\" \"1 0 0 0 1 0 0 0 1\"\n    Option \"EmulateThirdButton\" \"1\"\n    Option \"EmulateThirdButtonTimeout\" \"750\"\n    Option \"EmulateThirdButtonMoveThreshold\" \"30\"\nEndSection\nThis does two things: maps the touch device correctly to the display and enables long-press (750ms hold) as right-click emulation. Save the file and reboot the machine. Touch screen right-clicking should now be supported.\n\n\nOn screen keyboard\nThe X11 release of Raspberry Pi OS also does not natively support an on-screen touch keyboard. To avoid needing an external keyboard, install and configure onboard, a decent on-screen keyboard for X11 on Raspberry Pi:\nsudo apt install onboard\nTo make this keyboard automatically appear when needed, like on a tablet or smartphone, also install AT-SPI2, the Linux Assistive Technology Service Provider Interface, and enable accessibility:\nsudo apt install at-spi2-core\ngsettings set org.gnome.desktop.interface toolkit-accessibility true\nConfigure the keyboard to your liking using its built-in settings:\nonboard-settings\nI chose to dock it to the bottom of the screen and stretch across the screen, like on a tablet:\n\nWindow → enable “Dock to screen edge”\nWindow → Docking Settings → select “Shrink workarea”, “Expand on landscape screens”, and “Expand on portrait screens”\nWindow → Docking Settings → select “Dock to screen edge: Bottom”\n\nAnd to auto-show when needed:\n\nAuto-show → “Auto-show when editing text”\n\nThis does not behave as flawlessly or as conveniently as one is accustomed to on mobile devices, but it is close enough for a system that will primarily be used as a virtual organ. For example, one caveat is that the keyboard application has to be running in order for auto-show to work. Also, the keyboard itself is known to work fine in some applications, not at all in some, and be hit-or-miss in others. To handle this, add a toggle button to the taskbar that can be used to launch the keyboard when first needed or to manually show it if it does not automatically show in some application. This requires three steps:\n\nCreate a system-wide .desktop file:\nsudo nano /usr/share/applications/onboard.desktop\nIn it, add the following:\n[Desktop Entry]\nName=On-Screen Keyboard\nComment=Toggle On-Screen Keyboard\nExec=bash -c 'DISPLAY=:0 killall onboard || DISPLAY=:0 onboard'\nIcon=onboard\nType=Application\nCategories=Utility;\nModify the system panel file to add it to the taskbar:\nnano ~/.config/lxpanel/LXDE-pi/panels/panel\nAdd the following block to the end of the file:\nPlugin {\n  type=launchtaskbar\n  Config {\n    Button {\n      id=onboard.desktop\n    }\n  }\nexpand=0\n}\nOpen the keyboard application on startup:\nnano ~/.config/lxsession/LXDE-pi/autostart\nAdd to the end of the file:\n@onboard\n\nAfter these steps, reboot the machine for the settings to take affect.",
+    "crumbs": [
+      "Setup",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Software</span>"
+    ]
+  },
+  {
+    "objectID": "content/software.html#grandorgue",
+    "href": "content/software.html#grandorgue",
+    "title": "Software",
+    "section": "GrandOrgue",
+    "text": "GrandOrgue\n\nInstallation\nFrom the GrandOrgue releases GitHub, download the arm64.deb architecture package. As of May 2026, the current release was grandorgue_3.17.1-1_arm64.deb. It can also be downloaded directly in the terminal:\nwget https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue_3.17.1-1_arm64.deb\n\n\n\n\n\n\nNote\n\n\n\ngrandorgue requires wxWidgets 3.2 and grandorgue-wx30 requires wxWidgets 3.0. Raspberry Pi OS Bookworm ships with wxWidgets 3.2, so the standard grandorgue package above is the correct one.\n\n\nInstall the software using either the downloaded installer or terminal:\nsudo apt install ./grandorgue_3.17.1-1_arm64.deb\nsudo apt --fix-broken install\nYou might get a Permission Denied warning, but it can be ignored:\nN: Download is performed unsandboxed as root as file '/home/username/grandorgue_3.17.1-1_arm64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)\nIt is not a fatal error; the application should have installed fine.\nVerify the installation by looking for it in the Sound & Video application menu. Launch the program. It should open and load the demo organ.\n\n\nConfiguration\nNext, we need to map MIDI channels between GrandOrgue and the instrument. Open GrandOrgue and go to File → Settings\n\nMIDI Devices tab: Select UNC204HD as both the MIDI input device and MIDI output device.\nAudio tab:\n\nSet Sample Rate to 48000 and Samples per buffer to 128\nUnder Sound ports, select RtAudio and RtAudio alsa\nIn the Mapping output panel, under Audio Output, set the Device to RtAudio: alsa: Default ALSA Device [50 ms requested] to route the audio through the built in monitor speakers for now. (To set this, click the name of the current device, then click Change.) See Audio for instructions on changing this later.\n\n\nTo reduce audio lag:\n\nFile → Settings → Audio\nSet the Samples per buffer to 256 or 128 (defaults to 512).\n\nThe lower the buffer size, the lower the latency. At 48,000 Hz sample rate, 128 samples per buffer supposedly gives about 2.7 milliseconds of latency, which is completely imperceptible. The tradeoff is that very low buffer sizes can cause audio crackle or dropouts if the RPi can’t process audio fast enough. The Pi 5 should, however, be plenty powerful enough to handle 128 samples without trouble, especially with the demo sample set.\nEven at 128 samples/buffer, I still noticed a lag, but it was better than when I started. It is possible that some delay is “built in” as the result of the sample recording. This remains to be determined. I am accustomed to old-technology, non-realistic digital organs on which the sound is instantaneous, whereas many pipe organs have a slight (fraction of a second) lag between the time a key is depressed and the sound is actually heard.\nThe overall volume can be controlled via the GrandOrgue menu bar using the + and - buttons next to the small speaker icon. Raise the volume cautiously, watching the audio bars as you play. Going to loud will cause the audio to clip (max out), leading to distortion.\n\n\nUpdating\nAs of late 2026, GrandOrgue does not include a built-in software update method. While it does display an alert in the menu bar when an update is available, one must manually download and install it. The process is the same as the initial installation:\nwget https://github.com/GrandOrgue/grandorgue/releases/download/X.X.X-X/grandorgue_X.X.X-X_arm64.deb\nsudo apt install ./grandorgue_X.X.X-X_arm64.deb\nsudo apt --fix-broken install\nwhere X.X.X-X is the version release to download. Since I do not use Linux enough to remember these commands, nor can I ever remember the correct asset, I created a simple Shell script to handle it for me:\n\n\nupdate_grandorgue.sh\n\n#!/bin/bash\n# update-grandorgue.sh\n# Downloads and installs a GrandOrgue release from GitHub\n# Usage: ./update-grandorgue.sh &lt;version&gt;\n# Example: ./update-grandorgue.sh 3.17.3-1\n\nset -e  # Exit immediately if any command fails\n\n# --- Check argument ---\nif [ -z \"$1\" ]; then\n    echo \"Usage: $0 &lt;version&gt;\"\n    echo \"Example: $0 3.17.3-1\"\n    echo \"\"\n    echo \"Find the latest version at:\"\n    echo \"https://github.com/GrandOrgue/grandorgue/releases\"\n    exit 1\nfi\n\nVERSION=\"$1\"\nARCH=\"arm64\"\nFILENAME=\"grandorgue_${VERSION}_${ARCH}.deb\"\nURL=\"https://github.com/GrandOrgue/grandorgue/releases/download/${VERSION}/${FILENAME}\"\nDOWNLOAD_DIR=\"/tmp\"\nDOWNLOAD_PATH=\"${DOWNLOAD_DIR}/${FILENAME}\"\n\necho \"============================================\"\necho \" GrandOrgue Updater\"\necho \"============================================\"\necho \" Version : $VERSION\"\necho \" File    : $FILENAME\"\necho \" URL     : $URL\"\necho \"============================================\"\necho \"\"\n\n# --- Download ---\necho \"Downloading $FILENAME...\"\nwget -O \"$DOWNLOAD_PATH\" \"$URL\"\n\nif [ ! -f \"$DOWNLOAD_PATH\" ]; then\n    echo \"Error: Download failed. Check the version number and try again.\"\n    exit 1\nfi\n\necho \"Download complete.\"\necho \"\"\n\n# --- Install ---\necho \"Installing $FILENAME...\"\nsudo apt install -y \"$DOWNLOAD_PATH\"\n\necho \"\"\necho \"============================================\"\necho \" GrandOrgue $VERSION installed successfully.\"\necho \"============================================\"\n\n# --- Clean up ---\necho \"Cleaning up downloaded file...\"\nrm \"$DOWNLOAD_PATH\"\necho \"Done.\"\n\nFor convenience, and until I remember that it exists, I put this script on my Desktop alongside GrandOrgue. To use it, open a terminal window, navigate to the Desktop, and launch the code, passing the desired release version as a command line argument:\n./update_grandorgue.sh 3.17.3-1\n\n\nAudio\nSeveral audio routing options exist, but GrandOrgue needs to be configured properly for each one to work. High-quality headphones or external speakers are highly recommended.\nTo use the touchscreen built-in speakers or headphones or external speakers plugged into the touchscreen headphone jack:\n\nIn the Mapping output panel, under Audio Output, set the Device to RtAudio: alsa: Default ALSA Device [50 ms requested]. (To set this, click the name of the current device, then click Change.)\n\nTo use headphones or external speakers connected to the USB audio interface (preferred method):\n\nIn the Mapping output panel, under Audio Output, set the Device to RtAudio: alsa: UMC204HD 192k (USB Audio) [50 ms requested].\nTurn the MIX knob fully clockwise to PS (playback signal) to hear only the audio playback from GrandOrgue. (If set counterclockwise to IN, you won’t hear anything.)\nAdjust the volume using the PHONES volume knob.\nToggle the MONITOR button until you hear sound. In my case, it has to be out.\n\nUse the first configuration (RtAudio: alsa: Default ALSA Device [50 ms requested]) for Bluetooth headphone as well, since the audio will be handled by the operating system rather than GrandOrgue. My experience, however, has been that bluetooth headphones experience a fairly significant lag in audio, so I use wired headphones.\nSince my old keyboard did not have an Audio In jack, I could not channel the sound back to the keyboard speakers – which was just as well, because they are not very good anyway. The best (but not perfect) option was wired headphones plugged into the UNC204HD interface. The only headphones I owned had a 1/8” plug, so I had to use a 1/4”-1/8” adapter to connect them. There was a slight buzz, possibly resulting from the extra connection. It was annoying, but not bad enough to abandon the setup.",
+    "crumbs": [
+      "Setup",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Software</span>"
     ]
   },
   {
     "objectID": "content/customizing.html",
     "href": "content/customizing.html",
-    "title": "3  Customization",
+    "title": "Customization",
     "section": "",
-    "text": "3.1 Bureå Funeral Chapel\nThe default sample set is great to get started with, but it’s rather small. The beauty of virtual pipe organ (VPO) software is the ability and flexibility to use any number of sample sets. Many sample sets of various sizes exist, from small single-division organs to large many-division instruments. One constraint is disk storage: one needs to have enough space to download and store the sample set. The primary constraint with choosing samples to use, however, is RAM: the sample set must fit in the computer’s RAM to work properly. Thus, my constraint was 16 GB RAM that came on the Raspberry Pi 5. What this means in practice:\nSince I only had one keyboard with no pedalboard, it made sense to consider single-manual samples. I could use larger ones, but I could only play one manual. The workaround would be mapping the Great division to my keyboard and relying on couplers to play other manuals from the Great manual.\nThe first organ I tried was the Bureå Funeral Chapel from Lars Virtual Pipe Organs. This was a small chamber organ with one manual, pedals, and nine stops. All of the manual stops were split stops with separate drawknobs for bass (first two octaves) and discant. Split stops provide greater flexibility on a small instrument, allowing the organist to use different combinations of stops on one manual instead of across two manuals.\nFirst, I downloaded the .rar file. I needed to install the “unrar” utility the first time in order to extract this:\nThen I unpacked it into the GrandOrgue/Organs/ directory:\nI then opened GrandOrgue, went to File → Open, found and selected the desired organ sample, and clicked Open. The new organ should load and be ready for use.",
+    "text": "Bureå Funeral Chapel\nThe default sample set is great to get started with, but it’s rather small. The beauty of virtual pipe organ (VPO) software is the ability and flexibility to use any number of sample sets. Many sample sets of various sizes exist, from small single-division organs to large many-division instruments. One constraint is disk storage: one needs to have enough space to download and store the sample set. The primary constraint with choosing samples to use, however, is RAM: the sample set must fit in the computer’s RAM to work properly. Thus, my constraint was 16 GB RAM that came on the Raspberry Pi 5. What this means in practice:\nSince I only had one keyboard with no pedalboard, it made sense to consider single-manual samples. I could use larger ones, but I could only play one manual. The workaround would be mapping the Great division to my keyboard and relying on couplers to play other manuals from the Great manual. (I might also be able to map all manuals to the same keyboard and essentially multiply the number of stops available, but I haven’t tested this yet.)\nThe first organ I tried was the Bureå Funeral Chapel from Lars Virtual Pipe Organs. This is a small chamber organ with one manual, pedals, and nine stops. All of the manual stops are split stops with separate drawknobs for bass (first two octaves) and everything else. Split stops provide greater flexibility on a small instrument, allowing the organist to use different combinations of stops on one manual instead of across two manuals. Since I only have one keyboard, this seemed like a good starting point.\nFirst, download the .rar file. I needed to install the “unrar” utility the first time in order to extract this:\nNext, unpacked it into the GrandOrgue/Organs/ directory:\nFinally, open GrandOrgue, go to File → Open, find and select the desired organ sample, and click Open. The new organ should load and be ready for use.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Customization</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Customization</span>"
     ]
   },
   {
     "objectID": "content/customizing.html#bureå-funeral-chapel",
     "href": "content/customizing.html#bureå-funeral-chapel",
-    "title": "3  Customization",
+    "title": "Customization",
     "section": "",
     "text": "sudo apt install unrar\n\nunrar x Burea_Funeral_Chapel.rar /home/username/GrandOrgue/Organs/Burea_Funeral_Chapel/",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Customization</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Customization</span>"
     ]
   }
 ]
