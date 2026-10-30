@@ -17,8 +17,13 @@ book:
   date: today
   chapters:
     - index.qmd
+    - content/quick-start.qmd
     - content/hardware.qmd
-    - content/setup.qmd
+    - part: "Setup"
+      chapters:
+      - content/keyboard.qmd
+      - content/organ.qmd
+      - content/software.qmd
     - content/customizing.qmd
     # - content/rendering.qmd
     # - content/adding-refs.qmd
@@ -63,6 +68,7 @@ format:
     theme: [cosmo, assets/theme.scss] 
     toc: true
     toc-depth: 3
+    number-sections: false
 
 filters:
   - assets/include-files.lua

@@ -1,0 +1,324 @@
+---
+title: "Software"
+subtitle: Setting up the GrandOrgue software
+---
+
+## Raspberry Pi setup
+
+Raspberry Pi (RPi) devices run Debian-based Raspberry Pi OS. GrandOrgue needs the 64-bit Raspberry Pi OS in order to utilize all of the installed RAM (a 32-bit OS would cap the usable RAM at 4 GB, regardless of what is installed in the system.) The 64-bit OS conveniently comes pre-installed on the CanaKit RPi.
+
+Before installing anything, download and install any OS updates:
+
+```bash
+sudo apt update && sudo apt full-upgrade -y
+sudo reboot
+```
+
+GrandOrgue [recommends X11](https://github.com/GrandOrgue/grandorgue/blob/master/INSTALL.md) to properly handle window sizing and positioning. To switch the display mode:
+
+1. Open a terminal and run
+   ```bash
+   sudo raspi-config
+   ```
+2. Use the down arrow key to select **Advanced Options**
+3. In the next menu, select **Wayland**
+4. Select **X11**, then **\<OK\>**
+5. Use the right arrow key to select **\<Finish\>** and then **Reboot**
+
+The touch monitor is plug-and-play. Since the RPi 5 only has a single USB-C port, which is used for the power supply, the monitor needs to be connected to the RPi via both HDMI for data and USB for power. I used the HDMI to mini-HDMI cable that came with the RPi and the USB-C to USB-A cable that came with the monitor. The RPi needed to be rebooted after everything was connected for the touch screen to work properly.
+
+### Set Screen Resolution
+
+The Pi occasionally fails to read the monitor’s EDID (Extended Display Identification Data) on boot and defaults to 1024x768. Force the correct resolution by adding these lines to the boot config:
+
+```bash
+sudo nano /boot/firmware/config.txt
+```
+
+Add at the bottom:
+
+```
+hdmi_force_hotplug=1
+hdmi_group=2
+hdmi_mode=82
+hdmi_force_hotplug=1 — forces Pi to treat HDMI as always connected
+hdmi_group=2 — sets DMT (Display Monitor Timings) mode for computer monitors
+hdmi_mode=82 — forces 1920x1080 at 60Hz
+```
+
+### Touch screen right-click
+
+There was no discernable way to right-click on the touch screen by default on the X11 release of Raspberry Pi OS. This can be fixed by telling X11, the software layer that manages the display and interprets input, to treat a specific pattern of touch behavior, such as briefly holding a finger still on a spot, as a right-click signal. To do this, we need to set three settings:
+
+1. `EmulateThirdButton` to turns the feature on
+2. `EmulateThirdButtonTimeout` to set how long to hold before it triggers, in milliseconds. 750 is long enough that normal taps don’t accidentally trigger it, but short enough to feel responsive.
+3. `EmulateThirdButtonMoveThreshold` to set how many pixels your finger is allowed to drift during the hold before the gesture is cancelled. This prevents accidental right-clicks when you’re just resting your finger briefly while scrolling or moving around the screen.
+
+Open a terminal window and enter:
+
+```bash
+sudo nano /usr/share/X11/xorg.conf.d/99-ilitek-touch.conf
+```
+
+If this file exists, add the following inside the `Section "InputClass"` block:
+
+```
+Option "EmulateThirdButton" "1"
+Option "EmulateThirdButtonTimeout" "750"
+Option "EmulateThirdButtonMoveThreshold" "30"
+```
+
+If the file that opens is blank, paste the following in it:
+
+```
+Section "InputClass"
+    Identifier "ILITEK Touch"
+    MatchProduct "ILITEK ILITEK-TP"
+    MatchIsTouchscreen "on"
+    Option "TransformationMatrix" "1 0 0 0 1 0 0 0 1"
+    Option "EmulateThirdButton" "1"
+    Option "EmulateThirdButtonTimeout" "750"
+    Option "EmulateThirdButtonMoveThreshold" "30"
+EndSection
+```
+
+This does two things: maps the touch device correctly to the display and enables long-press (750ms hold) as right-click emulation. Save the file and reboot the machine. Touch screen right-clicking should now be supported.
+
+### On screen keyboard
+
+The X11 release of Raspberry Pi OS also does not natively support an on-screen touch keyboard. To avoid needing an external keyboard, install and configure **onboard**, a decent on-screen keyboard for X11 on Raspberry Pi:
+
+```bash
+sudo apt install onboard
+```
+
+To make this keyboard automatically appear when needed, like on a tablet or smartphone, also install **AT-SPI2**, the Linux Assistive Technology Service Provider Interface, and enable accessibility:
+
+```bash
+sudo apt install at-spi2-core
+gsettings set org.gnome.desktop.interface toolkit-accessibility true
+```
+
+Configure the keyboard to your liking using its built-in settings:
+
+```bash
+onboard-settings
+```
+
+I chose to dock it to the bottom of the screen and stretch across the screen, like on a tablet:
+
+* Window &rarr; enable "Dock to screen edge"
+* Window &rarr; Docking Settings &rarr; select "Shrink workarea", "Expand on landscape screens", and "Expand on portrait screens"
+* Window &rarr; Docking Settings &rarr; select "Dock to screen edge: Bottom"
+
+And to auto-show when needed:
+
+* Auto-show &rarr; "Auto-show when editing text"
+
+This does not behave as flawlessly or as conveniently as one is accustomed to on mobile devices, but it is close enough for a system that will primarily be used as a virtual organ. For example, one caveat is that the keyboard application has to be running in order for auto-show to work. Also, the keyboard itself is known to work fine in some applications, not at all in some, and be hit-or-miss in others. To handle this, add a toggle button to the taskbar that can be used to launch the keyboard when first needed or to manually show it if it does not automatically show in some application. This requires three steps:
+
+1. Create a system-wide `.desktop` file:
+
+   ```bash
+   sudo nano /usr/share/applications/onboard.desktop
+   ```
+
+   In it, add the following:
+
+   ```
+   [Desktop Entry]
+   Name=On-Screen Keyboard
+   Comment=Toggle On-Screen Keyboard
+   Exec=bash -c 'DISPLAY=:0 killall onboard || DISPLAY=:0 onboard'
+   Icon=onboard
+   Type=Application
+   Categories=Utility;
+   ```
+
+2. Modify the system `panel` file to add it to the taskbar:
+
+   ```bash
+   nano ~/.config/lxpanel/LXDE-pi/panels/panel
+   ```
+
+   Add the following block to the end of the file:
+
+   ```
+   Plugin {
+     type=launchtaskbar
+     Config {
+       Button {
+         id=onboard.desktop
+       }
+     }
+   expand=0
+   }
+   ```
+
+3. Open the keyboard application on startup:
+
+   ```bash
+   nano ~/.config/lxsession/LXDE-pi/autostart
+   ```
+
+   Add to the end of the file:
+
+   ```
+   @onboard
+   ```
+
+After these steps, reboot the machine for the settings to take affect.
+
+
+## GrandOrgue
+
+### Installation
+
+From the [GrandOrgue releases GitHub](https://github.com/GrandOrgue/grandorgue/releases), download the `arm64.deb` architecture package. As of May 2026, the current release was `grandorgue_3.17.1-1_arm64.deb`. It can also be downloaded directly in the terminal:
+
+```bash
+wget https://github.com/GrandOrgue/grandorgue/releases/download/3.17.1-1/grandorgue_3.17.1-1_arm64.deb
+```
+
+::: {.callout-note}
+`grandorgue` requires **wxWidgets 3.2** and `grandorgue-wx30` requires **wxWidgets 3.0**. Raspberry Pi OS Bookworm ships with wxWidgets 3.2, so the standard `grandorgue` package above is the correct one.
+:::
+
+Install the software using either the downloaded installer or terminal:
+
+```bash
+sudo apt install ./grandorgue_3.17.1-1_arm64.deb
+sudo apt --fix-broken install
+```
+
+You might get a `Permission Denied` warning, but it can be ignored:  
+
+```bash
+N: Download is performed unsandboxed as root as file '/home/username/grandorgue_3.17.1-1_arm64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
+```
+
+It is not a fatal error; the application should have installed fine. 
+
+Verify the installation by looking for it in the **Sound & Video** application menu. Launch the program. It should open and load the demo organ.
+
+### Configuration
+
+Next, we need to map MIDI channels between GrandOrgue and the instrument. Open GrandOrgue and go to **File** → **Settings**
+
+1. **MIDI Devices** tab: Select UNC204HD as both the **MIDI input device** and **MIDI output device**.
+
+2. **Audio** tab:
+
+    - Set **Sample Rate** to 48000 and **Samples per buffer** to 128
+    - Under **Sound ports**, select **RtAudio** and **RtAudio alsa**
+    - In the **Mapping output** panel, under **Audio Output**, set the Device to **RtAudio: alsa: Default ALSA Device [50 ms requested]** to route the audio through the built in monitor speakers for now. (To set this, click the name of the current device, then click **Change**.) See [Audio](#audio) for instructions on changing this later.
+  
+To reduce audio lag:
+
+1. **File** → **Settings** → **Audio**
+2. Set the **Samples per buffer** to 256 or 128 (defaults to 512).
+
+The lower the buffer size, the lower the latency. At 48,000 Hz sample rate, 128 samples per buffer supposedly gives about 2.7 milliseconds of latency, which is completely imperceptible. The tradeoff is that very low buffer sizes can cause audio crackle or dropouts if the RPi can't process audio fast enough. The Pi 5 should, however, be plenty powerful enough to handle 128 samples without trouble, especially with the demo sample set.
+
+Even at 128 samples/buffer, I still noticed a lag, but it was better than when I started. It is possible that some delay is "built in" as the result of the sample recording. This remains to be determined. I am accustomed to old-technology, non-realistic digital organs on which the sound is instantaneous, whereas many pipe organs have a slight (fraction of a second) lag between the time a key is depressed and the sound is actually heard.
+
+The overall volume can be controlled via the GrandOrgue menu bar using the **+** and **-** buttons next to the small speaker icon. Raise the volume cautiously, watching the audio bars as you play. Going to loud will cause the audio to clip (max out), leading to distortion.
+
+### Updating
+
+As of late 2026, GrandOrgue does not include a built-in software update method. While it does display an alert in the menu bar when an update is available, one must manually download and install it. The process is the same as the [initial installation](#grandorgue-installation):
+
+```bash
+wget https://github.com/GrandOrgue/grandorgue/releases/download/X.X.X-X/grandorgue_X.X.X-X_arm64.deb
+sudo apt install ./grandorgue_X.X.X-X_arm64.deb
+sudo apt --fix-broken install
+```
+
+where `X.X.X-X` is the version release to download. Since I do not use Linux enough to remember these commands, nor can I ever remember the correct asset, I created a simple Shell script to handle it for me:
+
+```{.bash filename="update_grandorgue.sh"}
+#!/bin/bash
+# update-grandorgue.sh
+# Downloads and installs a GrandOrgue release from GitHub
+# Usage: ./update-grandorgue.sh <version>
+# Example: ./update-grandorgue.sh 3.17.3-1
+
+set -e  # Exit immediately if any command fails
+
+# --- Check argument ---
+if [ -z "$1" ]; then
+    echo "Usage: $0 <version>"
+    echo "Example: $0 3.17.3-1"
+    echo ""
+    echo "Find the latest version at:"
+    echo "https://github.com/GrandOrgue/grandorgue/releases"
+    exit 1
+fi
+
+VERSION="$1"
+ARCH="arm64"
+FILENAME="grandorgue_${VERSION}_${ARCH}.deb"
+URL="https://github.com/GrandOrgue/grandorgue/releases/download/${VERSION}/${FILENAME}"
+DOWNLOAD_DIR="/tmp"
+DOWNLOAD_PATH="${DOWNLOAD_DIR}/${FILENAME}"
+
+echo "============================================"
+echo " GrandOrgue Updater"
+echo "============================================"
+echo " Version : $VERSION"
+echo " File    : $FILENAME"
+echo " URL     : $URL"
+echo "============================================"
+echo ""
+
+# --- Download ---
+echo "Downloading $FILENAME..."
+wget -O "$DOWNLOAD_PATH" "$URL"
+
+if [ ! -f "$DOWNLOAD_PATH" ]; then
+    echo "Error: Download failed. Check the version number and try again."
+    exit 1
+fi
+
+echo "Download complete."
+echo ""
+
+# --- Install ---
+echo "Installing $FILENAME..."
+sudo apt install -y "$DOWNLOAD_PATH"
+
+echo ""
+echo "============================================"
+echo " GrandOrgue $VERSION installed successfully."
+echo "============================================"
+
+# --- Clean up ---
+echo "Cleaning up downloaded file..."
+rm "$DOWNLOAD_PATH"
+echo "Done."
+```
+
+For convenience, and until I remember that it exists, I put this script on my Desktop alongside GrandOrgue. To use it, open a terminal window, navigate to the Desktop, and launch the code, passing the desired release version as a command line argument:
+
+```bash
+./update_grandorgue.sh 3.17.3-1
+```
+
+### Audio
+
+Several audio routing options exist, but GrandOrgue needs to be configured properly for each one to work. High-quality headphones or external speakers are highly recommended.
+
+**To use the touchscreen built-in speakers or headphones or external speakers plugged into the touchscreen headphone jack:**
+  
+- In the **Mapping output** panel, under **Audio Output**, set the Device to **RtAudio: alsa: Default ALSA Device [50 ms requested]**. (To set this, click the name of the current device, then click **Change**.)
+
+**To use headphones or external speakers connected to the USB audio interface (preferred method):**
+  
+- In the **Mapping output** panel, under **Audio Output**, set the Device to **RtAudio: alsa: UMC204HD 192k (USB Audio) [50 ms requested]**.
+- Turn the **MIX** knob fully clockwise to PS (playback signal) to hear only the audio playback from GrandOrgue. (If set counterclockwise to IN, you won't hear anything.)
+- Adjust the volume using the **PHONES** volume knob.
+- Toggle the **MONITOR** button until you hear sound. In my case, it has to be out.
+
+Use the first configuration (**RtAudio: alsa: Default ALSA Device [50 ms requested]**) for Bluetooth headphone as well, since the audio will be handled by the operating system rather than GrandOrgue. My experience, however, has been that bluetooth headphones experience a fairly significant lag in audio, so I use wired headphones.
+
+Since my old keyboard did not have an Audio In jack, I could not channel the sound back to the keyboard speakers -- which was just as well, because they are not very good anyway. The best (but not perfect) option was wired headphones plugged into the UNC204HD interface. The only headphones I owned had a 1/8" plug, so I had to use a 1/4"-1/8" adapter to connect them. There was a slight buzz, possibly resulting from the extra connection. It was annoying, but not bad enough to abandon the setup.

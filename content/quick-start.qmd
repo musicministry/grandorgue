@@ -1,0 +1,31 @@
+---
+title: Quick Start
+subtitle: After everything has been set up the first time
+---
+
+## Hardware
+
+| Connect... |   | ...to... | ...using |
+|:-----------|:-:|:---------|:---------|
+Monitor | &rarr; | Raspberry Pi | HDMI
+Monitor | &rarr; | Raspberry Pi | USB, white port
+Audio interface | &rarr; | Raspberry Pi | USB, blue port
+Audio interface | &rarr; | MIDI keyboard | MIDI cable[^1]
+Computer keyboard / mouse | &rarr; | Raspberry Pi | USB, white first, then blue
+Raspberry Pi | &rarr; | AC power |
+MIDI Keyboard | &rarr; | AC power |
+Headphones or speakers | &rarr; | audio interface (preferred) | Wired (preferred)
+: Virtual pipe organ on Raspberry Pi hardware setup
+
+## Software
+
+1. Boot Raspberry Pi
+2. Turn on keyboard
+3. Launch GrandOrgue
+
+## Troubleshooting
+
+1. Verify the correct [audio output](setup.qmd#grandorgue-configuration) is selected
+2. If using an audio interface, ensure the [monitor switches and volume knobs](setup.qmd#audio) are set properly
+
+[^1]: Be sure to connect **MIDI OUT** from the keyboard or organ to **MIDI IN** on the audio interface.

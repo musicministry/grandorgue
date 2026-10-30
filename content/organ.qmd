@@ -1,0 +1,27 @@
+---
+title: "Digital Organ"
+subtitle: "Using GrandOrgue with a MIDI-equipped organ"
+---
+
+This page describes how to set up GrandOrgue with a MIDI-equipped digital organ.
+
+1. Connect the touchscreen monitor to the Raspberry Pi (RPi) using an HDMI cable and a USB cable plugged into a white USB 2.0 port. The monitor needs both cables to handle video, audio, and mouse commands.
+2. Connect the Behringer UMC204HD USB audio interface to the RPi using a USB cable plugged into a blue USB 3.0 port.
+3. Connect the organ **MIDI OUT** to the audio interface **MIDI IN**. This enables the organ console to control the GrandOrgue software. Since the software won't be controlling the organ console in any way, there is no need for a second MIDI cable. If the organ has separate switched and unswitched MIDI ports, using switched ports will require the divisional MIDI stops to be engaged in order for the virtual organ to sound through the speakers, while using unswitched ports will allow the virtual organ to speak regardless of whether the divisional MIDI stops are engaged. The second option is more intuitive for most applications.
+4. To utilize the digital organ speakers, connect the audio interface **AUDIO OUT** to audio line inputs on the organ. This will require either two 1/4" TRS or a two-channel RCA cable, depending on the organ.
+5. If using an external keyboard or mouse, connect to it to the RPi using either the white USB 2.0 port (preferred) or the remaining blue USB 3.0 port.
+6. Connect the power supplies to the RPi.
+
+### To summarize
+
+| Connect... |   | ...to...      | ...using        |
+|:-----------|:-:|:--------------|:----------------|
+Monitor | &rarr; | Raspberry Pi | HDMI
+Monitor | &rarr; | Raspberry Pi | USB, white port
+Audio interface | &rarr; | Raspberry Pi | USB, blue port
+Audio interface **MIDI IN** | &rarr; | Organ **MIDI OUT** (unswitched preferred) | MIDI cable
+Audio interface **AUDIO OUT** | &rarr; | Organ audio **LINE IN** | Two-channel RCA cable or two 1/4" TRS cables
+Computer keyboard / mouse | &rarr; | Raspberry Pi | USB, white first, then blue
+Raspberry Pi | &rarr; | AC power |
+MIDI Keyboard | &rarr; | AC power |
+: Using a virtual pipe organ on Raspberry Pi with a MIDI-equipped digital organ

@@ -1,0 +1,28 @@
+---
+title: "MIDI Keyboard"
+subtitle: "Using GrandOrgue with a MIDI-capable keyboard"
+---
+
+This page describes how to set up GrandOrgue with a single MIDI-capable keyboard.
+
+1. Connect the touchscreen monitor to the Raspberry Pi (RPi) using an HDMI cable and a USB cable plugged into a white USB 2.0 port. The monitor needs both cables to handle video, audio, and mouse commands.
+2. Connect the Behringer UMC204HD USB audio interface to the RPi using a USB cable plugged into a blue USB 3.0 port.
+3. Connect the keyboard **MIDI OUT** to the audio interface **MIDI IN**. This enables the keyboard to control the GrandOrgue software. Since the software won't be controlling the keyboard in any way, there is no need for a second MIDI cable.
+4. If using an external keyboard or mouse, connect to it to the RPi using either the white USB 2.0 port (preferred) or the remaining blue USB 3.0 port.
+5. Connect the power supplies to the RPi and keyboard.
+
+### To summarize
+
+| Connect... |   | ...to... | ...using |
+|:-----------|:-:|:---------|:---------|
+Monitor | &rarr; | Raspberry Pi | HDMI
+Monitor | &rarr; | Raspberry Pi | USB, white port
+Audio interface | &rarr; | Raspberry Pi | USB, blue port
+Audio interface | &rarr; | MIDI keyboard | MIDI cable[^1]
+Computer keyboard / mouse | &rarr; | Raspberry Pi | USB, white first, then blue
+Raspberry Pi | &rarr; | AC power |
+MIDI Keyboard | &rarr; | AC power |
+Headphones or speakers | &rarr; | audio interface (preferred) | Wired (preferred)
+: Using a virtual pipe organ on Raspberry Pi with a MIDI-capable keyboard
+
+[^1]: Be sure to connect **MIDI OUT** from the keyboard or organ to **MIDI IN** on the audio interface.
