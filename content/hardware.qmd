@@ -7,7 +7,7 @@ title: Hardware Requirements
 The minimum requirements needed to get started with GrandOrgue are:
 
 * Computer with at least 8 GB RAM (16+ GB preferred)
-* Touch screen monitor (for interacting with virtual console controls)
+* Touch screen monitor for interacting with virtual console controls
 * MIDI-USB cable or MIDI cable with a USB audio interface device for connecting the computer to the MIDI instrument
 * MIDI-ready organ or keyboard
 
@@ -39,7 +39,7 @@ I opted for the [Raspberry Pi 5](https://www.raspberrypi.com/products/raspberry-
 
 I bought a simple and compact [15.6" portable touch screen monitor](https://www.amazon.com/dp/B0BPX1QSLV?ref=ppx_yo2ov_dt_b_fed_asin_title) for my primary means of interacting with GrandOrgue. An upgrade might be in store down the road, but this will due to start.
 
-Unfortunately, the Raspberry Pi 5 does not have a dedicated 3.5mm headphone audio jack like its predecessor. Audio is outputted through HDMI or USB instead. I ended up buying a [Behringer UMC204HD](https://www.amazon.com/dp/B00QHURLCW) **USB audio interface** which would allow me to use a single USB port for both audio and to connect standard MIDI cables instead of a MIDI-USB cable. I also bought a 9.8-foot dual 5-pin **MIDI cable** to go along with that because I did not have one already.
+Unfortunately, the Raspberry Pi 5 does not have a dedicated 3.5mm headphone audio jack like its predecessor. Audio is outputted through HDMI or USB instead. I ended up buying a [Behringer UMC204HD](https://www.amazon.com/dp/B00QHURLCW) **USB audio interface** which would allow me to use a single USB port both for audio and to connect standard MIDI cables instead of a MIDI-USB cable. I also bought a 9.8-foot dual 5-pin **MIDI cable**.
 
 Altogether, my expenses for the initial set up came out to be just over $600:
 

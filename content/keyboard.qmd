@@ -18,7 +18,7 @@ This page describes how to set up GrandOrgue with a single MIDI-capable keyboard
 Monitor | &rarr; | Raspberry Pi | HDMI
 Monitor | &rarr; | Raspberry Pi | USB, white port
 Audio interface | &rarr; | Raspberry Pi | USB, blue port
-Audio interface | &rarr; | MIDI keyboard | MIDI cable[^1]
+Audio interface **MIDI IN** | &rarr; | Keyboard **MIDI OUT** | MIDI cable
 Computer keyboard / mouse | &rarr; | Raspberry Pi | USB, white first, then blue
 Raspberry Pi | &rarr; | AC power |
 MIDI Keyboard | &rarr; | AC power |

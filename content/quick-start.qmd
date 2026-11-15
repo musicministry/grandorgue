@@ -10,7 +10,7 @@ subtitle: After everything has been set up the first time
 Monitor | &rarr; | Raspberry Pi | HDMI
 Monitor | &rarr; | Raspberry Pi | USB, white port
 Audio interface | &rarr; | Raspberry Pi | USB, blue port
-Audio interface | &rarr; | MIDI keyboard | MIDI cable[^1]
+Audio interface **MIDI IN** | &rarr; | Keyboard **MIDI OUT** | MIDI cable
 Computer keyboard / mouse | &rarr; | Raspberry Pi | USB, white first, then blue
 Raspberry Pi | &rarr; | AC power |
 MIDI Keyboard | &rarr; | AC power |
@@ -25,7 +25,10 @@ Headphones or speakers | &rarr; | audio interface (preferred) | Wired (preferred
 
 ## Troubleshooting
 
-1. Verify the correct [audio output](setup.qmd#grandorgue-configuration) is selected
-2. If using an audio interface, ensure the [monitor switches and volume knobs](setup.qmd#audio) are set properly
+If you are not getting sound:
+
+1. Verify the correct [audio output](software.qmd#audio) is selected
+2. If using an audio interface, turn the **MIX** knob fully clockwise to PS to only hear audio from GrandOrgue. If this is set to IN, nothing will be heard.
+3. Toggle any monitor switches to ensure nothing is muted. In my case, the one monitor button had to be out.
 
 [^1]: Be sure to connect **MIDI OUT** from the keyboard or organ to **MIDI IN** on the audio interface.
