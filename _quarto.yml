@@ -18,6 +18,7 @@ book:
   chapters:
     - index.qmd
     - content/quick-start.qmd
+    - content/overview.qmd
     - content/hardware.qmd
     - part: "Setup"
       chapters:
